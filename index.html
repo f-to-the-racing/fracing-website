@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F^Racing | Official Website</title>
+    <title>F<sup>RACING</sup> | Official Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -43,10 +43,17 @@
         }
 
         /* ------------------------------------------
-           LANGUAGE SWITCHING DISPLAY CONTROL (FIXED)
+           LANGUAGE SWITCHING DISPLAY CONTROL
            ------------------------------------------ */
         body[data-lang="jp"] .lang-en { display: none !important; }
         body[data-lang="en"] .lang-jp { display: none !important; }
+
+        /* F^RACINGの指数(上付き)スタイル設定 */
+        sup {
+            font-size: 0.6em;
+            vertical-align: super;
+            line-height: 0;
+        }
 
         a {
             color: inherit;
@@ -165,14 +172,22 @@
         /* 画像貼り付けプレースホルダー共通スタイル */
         .photo-placeholder {
             width: 100%;
-            background-color: var(--dark-gray);
-            border: 1px dashed var(--gray);
+            background-color: #F4F4F4;
+            border: 2px dashed #CCCCCC;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            color: var(--gray);
+            margin: 24px 0;
+        }
+
+        .photo-placeholder.dark {
+            background-color: var(--dark-gray);
+            border-color: var(--border-dark);
+            color: var(--light-gray);
         }
 
         .photo-placeholder img {
@@ -183,8 +198,8 @@
 
         .photo-placeholder p {
             font-family: var(--font-jp);
-            font-size: 0.85rem;
-            color: var(--light-gray);
+            font-size: 0.9rem;
+            font-weight: 500;
             margin-top: 8px;
         }
 
@@ -207,8 +222,9 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
-            opacity: 0.5;
-            object-fit: cover;
+            margin: 0;
+            border: none;
+            background-color: #111;
         }
 
         .hero-content {
@@ -298,39 +314,6 @@
             color: var(--white);
         }
 
-        .concept-map {
-            border: 1px solid var(--border-dark);
-            padding: 64px;
-            text-align: center;
-            margin: 48px 0;
-            background-color: var(--dark-gray);
-        }
-
-        .concept-map-speed {
-            font-family: var(--font-en);
-            font-size: 3rem;
-            font-weight: 800;
-            border-bottom: 2px solid var(--white);
-            display: inline-block;
-            padding-bottom: 8px;
-            margin-bottom: 48px;
-        }
-
-        .concept-map-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-        }
-
-        .map-node {
-            border: 1px solid var(--border-dark);
-            padding: 16px 8px;
-            font-family: var(--font-en);
-            font-size: 0.8rem;
-            font-weight: 700;
-            background-color: #222;
-        }
-
         /* ==========================================
            14. MISSION & VISION
            ========================================== */
@@ -401,83 +384,11 @@
         }
 
         /* ==========================================
-           19. MEMBERS
-           ========================================== */
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-
-        .member-card {
-            border: 1px solid var(--light-gray);
-            padding: 32px;
-            display: flex;
-            gap: 24px;
-        }
-
-        .member-img-box {
-            width: 140px;
-            height: 180px;
-            flex-shrink: 0;
-        }
-
-        .member-info h4 {
-            font-family: var(--font-en);
-            font-size: 1.25rem;
-            font-weight: 800;
-        }
-
-        .member-info .role {
-            font-family: var(--font-en);
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--gray);
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .member-info .motto {
-            font-family: var(--font-en);
-            font-size: 0.85rem;
-            font-style: italic;
-            margin-top: 12px;
-            border-left: 2px solid var(--black);
-            padding-left: 8px;
-        }
-
-        /* ==========================================
-           21 & 22. SPONSOR & TIERS TABLE
+           21 & 22. SPONSOR
            ========================================== */
         #sponsor {
             background-color: var(--black);
             color: var(--white);
-        }
-
-        .sponsor-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: var(--white);
-            color: var(--black);
-            margin: 48px 0;
-            font-size: 0.85rem;
-            text-align: center;
-        }
-
-        .sponsor-table th, .sponsor-table td {
-            border: 1px solid var(--light-gray);
-            padding: 12px 8px;
-        }
-
-        .sponsor-table th {
-            background-color: #F4F4F4;
-            font-family: var(--font-en);
-        }
-
-        .sponsor-table td:first-child {
-            text-align: left;
-            font-weight: 700;
-            background-color: #FAFAFA;
         }
 
         /* ==========================================
@@ -510,8 +421,8 @@
         /* RESPONSIVE */
         @media (max-width: 991px) {
             :root { --padding-x: 32px; }
-            #intro, .mv-grid, .members-grid, .business-grid { grid-template-columns: 1fr; }
-            .why-pillars, .concept-map-grid { grid-template-columns: 1fr; }
+            #intro, .mv-grid, .business-grid { grid-template-columns: 1fr; }
+            .why-pillars { grid-template-columns: 1fr; }
             .process-line { flex-direction: column; gap: 12px; }
             footer { flex-direction: column; align-items: flex-start; gap: 32px; }
         }
@@ -521,7 +432,7 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo">F^RACING</div>
+        <div class="logo">F<sup>RACING</sup></div>
         <div class="nav-container">
             <nav class="nav-links">
                 <a href="#about">ABOUT</a>
@@ -529,6 +440,7 @@
                 <a href="#challenge">CHALLENGE</a>
                 <a href="#engineering">ENGINEERING</a>
                 <a href="#business">BUSINESS</a>
+                <a href="#members">MEMBERS</a>
                 <a href="#sponsor">SPONSOR</a>
                 <a href="#contact">CONTACT</a>
             </nav>
@@ -543,9 +455,8 @@
 
     <!-- 09. HOME / HERO -->
     <section id="hero">
-        <div class="photo-placeholder hero-bg">
-            <!-- ここに写真だけ貼ってください -->
-            <img src="ここに写真のリンク（URL）を貼ってください" alt="ここに写真を貼ってください">
+        <div class="photo-placeholder dark hero-bg">
+            <img src="ここにメインビジュアル写真のURL" alt="メインビジュアル">
             <p>※ここにヒーロー背景写真を貼ってください</p>
         </div>
         <div class="hero-content">
@@ -559,7 +470,7 @@
     <!-- 10. HOME INTRODUCTION -->
     <section id="intro">
         <div>
-            <h2 style="font-family: var(--font-en); font-size: 2.5rem; font-weight: 800;">We Are FRacing</h2>
+            <h2 style="font-family: var(--font-en); font-size: 2.5rem; font-weight: 800;">We Are F<sup>RACING</sup></h2>
             <p class="lang-jp" style="color: var(--gray);">STEM Racing Team from Fusetsu</p>
             <p class="lang-en" style="color: var(--gray);">STEM Racing Team from Fusetsu</p>
         </div>
@@ -584,8 +495,8 @@
         </div>
 
         <div class="lang-jp">
-            <p>私たちは、FRacing (F to the Racing/エフレーシング)です。</p>
-            <p>FRacingは、久留米大学附設高等学校の高校生によって結成された、福岡県で初のSTEM Racingに挑戦するチームです。</p>
+            <p>私たちは、F<sup>RACING</sup> です。</p>
+            <p>F<sup>RACING</sup> は、久留米大学附設高等学校の高校生によって結成された、福岡県で初のSTEM Racingに挑戦するチームです。</p>
             <p>私たちは、ただレースカーを速く走らせることだけを目指しているわけではありません。一台のマシンを完成させるために、高校生の枠を超えた多角的なアプローチを行っています。</p>
             <br>
             <p>• <strong>Engineering (工学)</strong>——設計、シミュレーション、製作、テスト<br>仮説を立て、実際に試し、得られた結果を次の設計へつなげる。試行錯誤を繰り返しながら、マシンの可能性を追求します。</p>
@@ -594,8 +505,8 @@
         </div>
 
         <div class="lang-en">
-            <p>We are FRacing (F to the Racing).</p>
-            <p>FRacing is a team formed by high school students at Kurume University Fusetsu High School, and we are the first team in Fukuoka Prefecture to take on the challenge of STEM racing.</p>
+            <p>We are F<sup>RACING</sup>.</p>
+            <p>F<sup>RACING</sup> is a team formed by high school students at Kurume University Fusetsu High School, and we are the first team in Fukuoka Prefecture to take on the challenge of STEM racing.</p>
             <p>Our goal is not simply to make our race car go fast. To build a complete machine, we take a multifaceted approach that goes beyond the scope of typical high school students.</p>
             <br>
             <p>• <strong>Engineering</strong> - Design, Simulation, Fabrication, Testing<br>We formulate hypotheses, test them in practice, and apply the results to our next design. Through repeated trial and error, we explore the full potential of our machine.</p>
@@ -610,23 +521,23 @@
 
         <div class="lang-jp">
             <p>その積み重ねによって、一台のマシンだけでなく、チームそのものをつくっていく。</p>
-            <p>サーキットの上だけでなく、そのプロセスに転がるすべての経験と成長が、私たちFRacingです。</p>
+            <p>サーキットの上だけでなく、そのプロセスに転がるすべての経験と成長が、私たちF<sup>RACING</sup> です。</p>
         </div>
         <div class="lang-en">
             <p>Through this cumulative process, we build not just a single machine, but the team itself.</p>
-            <p>It is not just what happens on the racetrack, but all the experiences and growth woven into that process that define us as FRacing.</p>
+            <p>It is not just what happens on the racetrack, but all the experiences and growth woven into that process that define us as F<sup>RACING</sup>.</p>
         </div>
 
-        <!-- 12. WHY FRacing -->
+        <!-- 12. WHY F^RACING -->
         <div class="why-f-tree">
-            <h3 style="text-align: center; font-family: var(--font-en); font-size: 1.5rem; margin-bottom: 16px;">WHY FRacing</h3>
+            <h3 style="text-align: center; font-family: var(--font-en); font-size: 1.5rem; margin-bottom: 16px;">WHY F<sup>RACING</sup></h3>
             
             <div class="lang-jp">
-                <p>私たちのチーム名 「FRacing」には、私たちがこの活動に懸けるさまざまな想いと挑戦の軌跡が詰め込まれています。その中心にあるのが、「F」という一文字です。</p>
-                <p>私たちにとって「F」は、固定された意味を持つ言葉ではありません。常に進化し、新しい価値を象徴し続ける文字です。その代表となる3つの柱を紹介します。</p>
+                <p>私たちのチーム名 「F<sup>RACING</sup>」には、私たちがこの活動に懸けるさまざまな想いと挑戦の軌跡が詰め込まれています。その中心にあるのが、「F」という一文字です。</p>
+                <p>私達にとって「F」は、固定された意味を持つ言葉ではありません。常に進化し、新しい価値を象徴し続ける文字です。その代表となる3つの柱を紹介します。</p>
             </div>
             <div class="lang-en">
-                <p>Our team name, "FRacing," embodies the various aspirations we have for this endeavor and the journey of challenges we've undertaken. At its core lies a single letter: "F."</p>
+                <p>Our team name, "F<sup>RACING</sup>," embodies the various aspirations we have for this endeavor and the journey of challenges we've undertaken. At its core lies a single letter: "F."</p>
                 <p>For us, "F" is not a word with a fixed meaning. It is a letter that constantly evolves and continues to symbolize new values. Here, we introduce the three pillars that represent this.</p>
             </div>
 
@@ -651,18 +562,18 @@
             </div>
 
             <div class="lang-jp">
-                <p><strong>「Racing」は、Fを無限に広げる指数</strong></p>
-                <p>私たちは、この「F」に「Racing」を指数 (乗数) として組み合わせました。</p>
-                <p>私たちにとってレース活動は、単なる成果を表現する舞台ではありません。レースカーを自分たちの手で設計し、つくり、走らせ、仲間と限界に挑む。その一つひとつの経験が、私たちに新しい知識や価値観を与え、「F」の持つ意味をさらに何倍にも大きく、深く成長させていきます。</p>
+                <p><strong>「RACING」は、Fを無限に広げる指数</strong></p>
+                <p>私たちは、この「F」に「RACING」を指数 (乗数) として組み合わせました。</p>
+                <p>私達にとってレース活動は、単なる成果を表現する舞台ではありません。レースカーを自分たちの手で設計し、つくり、走らせ、仲間と限界に挑む。その一つひとつの経験が、私たちに新しい知識や価値観を与え、「F」の持つ意味をさらに何倍にも大きく、深く成長させていきます。</p>
                 <p>「F」が表すものは、この3つだけに留まりません。これからの挑戦を通じて、私たちは新しい「F」の意味を自分たちで生み出し、加えていきます。</p>
-                <p>Fusetsuから始まり、Futureへ向かい、Formulaに挑む。そして、Racingを通じてそのすべてをブーストさせていく。それが、私たちの 「F^Racing」 です。</p>
+                <p>Fusetsuから始まり、Futureへ向かい、Formulaに挑む。そして、Racingを通じてそのすべてをブーストさせていく。それが、私たちの 「F<sup>RACING</sup>」 です。</p>
             </div>
             <div class="lang-en">
-                <p><strong>"Racing" is the exponent that expands "F" infinitely.</strong></p>
-                <p>We have combined this "F" with "Racing" as an exponent (multiplier).</p>
+                <p><strong>"RACING" is the exponent that expands "F" infinitely.</strong></p>
+                <p>We have combined this "F" with "RACING" as an exponent (multiplier).</p>
                 <p>For us, racing is not merely a stage for showcasing results. We design, build, and drive our race cars with our own hands, pushing the limits alongside our teammates. Each of these experiences provides us with new knowledge and values, multiplying and deepening the meaning of "F" many times over.</p>
                 <p>What "F" represents is not limited to just these three things. Through our future challenges, we will create and add new meanings to "F" on our own.</p>
-                <p>Starting from Fusetsu, moving toward the Future, and taking on the Formula. And through Racing, we will boost it all. That is our "FRacing".</p>
+                <p>Starting from Fusetsu, moving toward the Future, and taking on the Formula. And through Racing, we will boost it all. That is our "F<sup>RACING</sup>".</p>
             </div>
         </div>
     </section>
@@ -677,21 +588,16 @@
         <p class="lang-jp">私たちのCONCEPTは「SPEED IS BUILT.」です。</p>
         <p class="lang-en">Our CONCEPT is "SPEED IS BUILT."</p>
 
-        <div class="concept-map">
-            <div class="concept-map-speed">SPEED</div>
-            <div class="concept-map-grid">
-                <div class="map-node">ENGINEERING</div>
-                <div class="map-node">MANUFACTURING</div>
-                <div class="map-node">DESIGN / RESEARCH</div>
-                <div class="map-node">MARKETING / SPONSORSHIP</div>
-                <div class="map-node">MANAGEMENT</div>
-            </div>
+        <!-- CONCEPT説明画像プレースホルダー -->
+        <div class="photo-placeholder dark">
+            <img src="ここにコンセプトマップ画像（ロゴ＋スピード構成要素）のURL" alt="CONCEPT MAP">
+            <p>※ここに「ロゴとコンセプトを説明する写真（画像）」を貼ってください</p>
         </div>
 
         <div class="lang-jp">
             <p>私たちは、速さは一つの要素だけで生み出されるものではないと考えています。</p>
             <p>マシンを生み出すEngineering、それを形にするManufacturing、一人ひとりの力を結集するTeamwork。さらに、チームの存在や挑戦を社会へ伝えるMarketing、活動を支えてくださる方々との関係を築くSponsorshipなど。</p>
-            <p>FRacingを構成する一つひとつの活動に向き合い、それぞれを高め、積み重ね、そして一つのチームとして機能させる。</p>
+            <p>F<sup>RACING</sup> を構成する一つひとつの活動に向き合い、それぞれを高め、積み重ね、そして一つのチームとして機能させる。</p>
             <p>私たちが追い求める速さは、どこかに与えられているものではありません。一つひとつの挑戦と、その積み重ねによって、自ら築き上げていくものです。</p>
             <p style="margin-top:24px; font-weight:700;">SPEED IS BUILT.<br>速さは、築き上げるもの。</p>
         </div>
@@ -699,7 +605,7 @@
         <div class="lang-en">
             <p>We believe that speed is not created by a single factor alone.</p>
             <p>Engineering, which creates the machine; Manufacturing, which brings it to life; and Teamwork, which unites the strengths of each individual. Furthermore, Marketing, which communicates the team's existence and challenges to society; and Sponsorship, which builds relationships with those who support our activities.</p>
-            <p>We engage with each and every activity that makes up FRacing, enhancing and building upon each one to function as a single, cohesive team.</p>
+            <p>We engage with each and every activity that makes up F<sup>RACING</sup>, enhancing and building upon each one to function as a single, cohesive team.</p>
             <p>The speed we pursue is not something that is simply given to us. It is something we build for ourselves through each individual challenge and the accumulation of those efforts.</p>
             <p style="margin-top:24px; font-weight:700;">SPEED IS BUILT.</p>
         </div>
@@ -715,11 +621,11 @@
                     <p>私たちのMISSIONは、「CREATE VALUE FOR SOCIETY.」です。</p>
                     <p>STEM Racingには、Engineering、Manufacturing、Marketing、Sponsorship、Team Managementなど、さまざまな分野があります。</p>
                     <p>私たちは、それぞれの分野に真剣に向き合い、ひとつひとつの分野で新たなVALUEを生み出すことを目指します。</p>
-                    <p>そして、そこで生まれたVALUEを単独で終わらせるのではなく、互いに掛け合わせ、組み合わせる。</p>
+                    <p>探して生まれたVALUEを単独で終わらせるのではなく、互いに掛け合わせ、組み合わせる。</p>
                     <p>技術とアイデア。人と人とのつながり。ものづくりと発信。</p>
                     <p>異なる分野から生まれたVALUEを一つにすることで、そこからさらに新しいVALUEを生み出す。</p>
                     <p>私たちは、STEM Racingという一つの舞台で生まれるさまざまなValueを結びつけ、私たちだけでは生み出せなかった価値を社会へ届けることを目指します。</p>
-                    <p style="margin-top:16px; font-weight:700;">Create Value for Society.<br>それが、私たちFRacingの使命です。</p>
+                    <p style="margin-top:16px; font-weight:700;">Create Value for Society.<br>それが、私たちF<sup>RACING</sup> の使命です。</p>
                 </div>
                 <div class="lang-en">
                     <p>Our MISSION is "CREATE VALUE FOR SOCIETY."</p>
@@ -729,7 +635,7 @@
                     <p>Technology and ideas. Connections between people. Manufacturing and communication.</p>
                     <p>By uniting the value born from these different fields, we generate even more new value.</p>
                     <p>We aim to connect the diverse forms of value created on the single stage of STEM Racing and deliver value to society that we could not have created on our own.</p>
-                    <p style="margin-top:16px; font-weight:700;">Create Value for Society.<br>That is the mission of FRacing</p>
+                    <p style="margin-top:16px; font-weight:700;">Create Value for Society.<br>That is the mission of F<sup>RACING</sup></p>
                 </div>
             </div>
 
@@ -789,14 +695,14 @@
         </div>
 
         <div class="lang-jp" style="margin-top: 32px;">
-            <p>私たちFRacingは、STEM Racingの舞台で、Professionalクラスでの出場、全国大会での上位、排して世界大会への進出を目指しています。</p>
+            <p>私たちF<sup>RACING</sup> は、STEM Racingの舞台で、Professionalクラスでの出場、全国大会での上位、排して世界大会への進出を目指しています。</p>
             <p>福岡から始まった私たちの挑戦は、決して簡単なものではありません。Engineering、Manufacturing、Marketing、Sponsorship、Team Management。さまざまな分野に向き合い、一人ひとりの力を一つのチームとして結集させる必要があります。</p>
             <p>私たちは、マシンの速さだけを追い求めるのではなく、設計から製作、マーケティング、スポンサーとのつながり、チーム運営まで、すべての過程に本気で向き合います。</p>
             <p>考え、つくり、試し、学び、また挑戦する。その積み重ねの先に、Professionalクラスでの挑戦があり、さらにその先に世界大会があります。</p>
             <p>福岡から世界へ。私たちは、一つひとつの挑戦を積み重ね、その先にある世界の舞台を目指します。</p>
         </div>
         <div class="lang-en" style="margin-top: 32px;">
-            <p>We at FRacing aim to compete in the Professional class on the STEM Racing stage, secure top finishes at national competitions, and advance to the world championships.</p>
+            <p>We at F<sup>RACING</sup> aim to compete in the Professional class on the STEM Racing stage, secure top finishes at national competitions, and advance to the world championships.</p>
             <p>Our journey, which began in Fukuoka, is by no means easy. Engineering, manufacturing, marketing, sponsorship, and team management-we must tackle these diverse fields and unite the strengths of each individual into a single, cohesive team.</p>
             <p>We don't just pursue speed; we take every step of the process seriously-from design and manufacturing to marketing, building relationships with sponsors, and managing the team.</p>
             <p>We think, build, test, learn, and challenge ourselves again. Through this continuous process, we aim to compete in the Professional Class, and beyond that, at the world championships.</p>
@@ -818,7 +724,7 @@
             <p>速いマシンには、速い理由があります。</p>
             <p>私たちは、感覚や経験だけに頼ってマシンをつくるのではなく、「なぜこの形なのか」「なぜこの設計なのか」を一つひとつ考え、確かめることを大切にしています。</p>
             <p>まず、3D CADを用いてマシンを設計する。形状や各部の寸法をデジタル上で検討し、シミュレーションを通じて設計の可能性を探ります。</p>
-            <p>そして、設計したものを実際の形にする。3Dプリンターなどの製造設備を活用し、試作品を製作します。</p>
+            <p>増して、設計したものを実際の形にする。3Dプリンターなどの製造設備を活用し、試作品を製作します。</p>
             <p>さらに、私たちは実際のマシンだけでなく、空力性能を確かめるための風洞試験にも取り組みます。設計した形状が実際にどのような空気の流れを生み、どのような性能につながるのか。シミュレーションと実験の両方から検証します。</p>
             <br>
             <p>仮説を立てる。CADで設計する。シミュレーションする。実際につくる。そして、試す。得られた結果から課題を見つけ、設計を見直し、また試す。その繰り返しによって、マシンを少しずつ進化させていきます。</p>
@@ -837,18 +743,16 @@
             <p>Furthermore, we don't stop at the actual machine-we also conduct wind tunnel tests to verify aerodynamic performance. How does the designed shape actually generate airflow, and what kind of performance does it result in? We verify this through both simulation and experimentation.</p>
             <br>
             <p>We formulate hypotheses. We design using CAD. We run simulations. We build the actual machine. And then, we test it. We identify challenges from the results, revise the design, and test again. Through this iterative process, we gradually evolve the machine.</p>
-            <p>Aerodynamics, chassis, weight, and drivetrain. We don't just pursue each element individually; we also consider how they interact with one another. Within limited constraints, we continue to seek faster and more rational solutions.</p>
             <br>
+            <p>Aerodynamics, chassis, weight, and drivetrain. We don't just pursue each element individually; we also consider how they interact with one another. Within limited constraints, we continue to seek faster and more rational solutions.</p>
             <p>For us, "Engineering" is not just about the finished machine itself. We think, design, build, test, learn, and think again. It is the accumulation of all these steps that shapes a single machine and produces the result known as "speed."</p>
             <p>Speed is not born by chance. We pursue Engineering that gives speed a reason.</p>
         </div>
 
-        <div style="margin-top: 48px;">
-            <div class="photo-placeholder" style="height: 300px;">
-                <!-- ここに写真だけ貼ってください -->
-                <img src="ここに写真のリンク（URL）を貼ってください" alt="ここに写真を貼ってください">
-                <p>※ここにエンジニアリング（CAD/シミュレーション/風洞実験）の写真を貼ってください</p>
-            </div>
+        <!-- ENGINEERING画像プレースホルダー -->
+        <div class="photo-placeholder">
+            <img src="ここにエンジニアリング写真（CAD/シミュレーション/風洞実験等）のURL" alt="ENGINEERING PHOTO">
+            <p>※ここにエンジニアリング（CAD/シミュレーション/風洞実験等）の写真を貼ってください</p>
         </div>
     </section>
 
@@ -860,11 +764,11 @@
         </div>
 
         <div class="lang-jp">
-            <p>FRacingにとって、Businessは単にスポンサーを集めたり、資金を管理したりすることではありません。</p>
+            <p>F<sup>RACING</sup> にとって、Businessは単にスポンサーを集めたり、資金を管理したりすることではありません。</p>
             <p>私たちが目指しているのは、企業や団体、排して応援してくださる方々とのつながりをつくり、それぞれが持つ技術、知識、経験、想いをチームの力へと変えていくことです。</p>
         </div>
         <div class="lang-en">
-            <p>For FRacing, "Business" is not simply about securing sponsors or managing funds.</p>
+            <p>For F<sup>RACING</sup>, "Business" is not simply about securing sponsors or managing funds.</p>
             <p>Our goal is to build connections with companies, organizations, and our supporters, and to transform their respective technologies, knowledge, experience, and passion into the team's strength.</p>
         </div>
 
@@ -873,13 +777,13 @@
                 <h4>MARKETING</h4>
                 <div class="lang-jp">
                     <p>私たちの挑戦を、より多くの人に知ってもらう。</p>
-                    <p>WebsiteやSNS、イベント、メディアなど、さまざまな方法を通じてFRacingの活動や挑戦を発信します。</p>
-                    <p>ただ活動を伝えるだけではなく、私たちが考え、つくり、試し、学んでいく過程そのものを届けることで、FRacingを応援してくださる人との新しいつながりを生み出します。</p>
+                    <p>WebsiteやSNS、イベント、メディアなど、さまざまな方法を通じてF<sup>RACING</sup> の活動や挑戦を発信します。</p>
+                    <p>ただ活動を伝えるだけではなく、私たちが考え、つくり、試し、学んでいく過程そのものを届けることで、F<sup>RACING</sup> を応援してくださる人との新しいつながりを生み出します。</p>
                 </div>
                 <div class="lang-en">
                     <p>We want more people to learn about our challenges.</p>
-                    <p>We'll share FRacing's activities and challenges through various channels, including our website, social media, events, and the media.</p>
-                    <p>Rather than simply reporting on our activities, we'll share the very process of how we think, create, test, and learn-thereby forging new connections with those who support FRacing.</p>
+                    <p>We'll share F<sup>RACING</sup>'s activities and challenges through various channels, including our website, social media, events, and the media.</p>
+                    <p>Rather than simply reporting on our activities, we'll share the very process of how we think, create, test, and learn-thereby forging new connections with those who support F<sup>RACING</sup>.</p>
                 </div>
             </div>
 
@@ -902,18 +806,18 @@
                 <div class="lang-jp">
                     <p>限られた時間とリソースの中で、一つの目標に向かってチームを動かす。</p>
                     <p>スケジュール管理、予算管理、役割分担、プロジェクトの進行など、Engineeringとは異なる視点からチーム全体を支えます。</p>
-                    <p>EngineeringとBusiness。それぞれの力を一つにつなげることで、FRacingというチームをつくっていきます。</p>
+                    <p>EngineeringとBusiness。それぞれの力を一つにつなげることで、F<sup>RACING</sup> というチームをつくっていきます。</p>
                 </div>
                 <div class="lang-en">
                     <p>Working within limited time and resources, we drive the team toward a single goal.</p>
                     <p>We support the entire team from a perspective distinct from Engineering-including schedule management, budget management, role allocation, and project progress.</p>
-                    <p>Engineering and Business. By uniting the strengths of both, we build the FRacing team.</p>
+                    <p>Engineering and Business. By uniting the strengths of both, we build the F<sup>RACING</sup> team.</p>
                 </div>
             </div>
         </div>
 
-        <p class="lang-jp" style="margin-top:32px; font-weight:700;">つながりをつくる。力を集める。そして、挑戦を前へ進める。それが、私たちFRacingのBusinessです。</p>
-        <p class="lang-en" style="margin-top:32px; font-weight:700;">Building connections. Pooling our strengths. And moving forward with our challenges. That is the business of FRacing</p>
+        <p class="lang-jp" style="margin-top:32px; font-weight:700;">つながりをつくる。力を集める。そして、挑戦を前へ進める。それが、私たちF<sup>RACING</sup> のBusinessです。</p>
+        <p class="lang-en" style="margin-top:32px; font-weight:700;">Building connections. Pooling our strengths. And moving forward with our challenges. That is the business of F<sup>RACING</sup></p>
     </section>
 
     <!-- 19. MEMBERS -->
@@ -923,75 +827,19 @@
             <h2>MEMBERS</h2>
         </div>
 
-        <div class="members-grid">
-            <!-- Member 1 -->
-            <div class="member-card">
-                <div class="member-img-box photo-placeholder">
-                    <!-- ここに写真だけ貼ってください -->
-                    <img src="ここに写真のリンク（URL）を貼ってください" alt="酒見颯一郎の写真">
-                    <p>PHOTO</p>
-                </div>
-                <div class="member-info">
-                    <span class="role">CEO / CHIEF EXECUTIVE OFFICER</span>
-                    <h4>SAKEMI SOICHIRO <span style="font-size:0.9rem; font-weight:normal;">(酒見 颯一郎)</span></h4>
-                    <div class="motto">"Internal fighting has never made a car go any faster"<br>-Adrian Newey</div>
-                </div>
-            </div>
+        <!-- メンバー組織図の画像プレースホルダー -->
+        <div class="photo-placeholder">
+            <img src="ここにメンバー組織図画像のURL" alt="メンバー組織図">
+            <p>※ここに「メンバーの組織図」写真を貼ってください</p>
+        </div>
 
-            <!-- Member 2 -->
-            <div class="member-card">
-                <div class="member-img-box photo-placeholder">
-                    <!-- ここに写真だけ貼ってください -->
-                    <img src="ここに写真のリンク（URL）を貼ってください" alt="志村叶光紀の写真">
-                    <p>PHOTO</p>
-                </div>
-                <div class="member-info">
-                    <span class="role">CTO / CHIEF TECHNOLOGY OFFICER</span>
-                    <h4>SHIMURA HIROKI <span style="font-size:0.9rem; font-weight:normal;">(志村 叶光紀)</span></h4>
-                    <div class="motto">"Regression to the Mean"</div>
-                </div>
-            </div>
-
-            <!-- Member 3 -->
-            <div class="member-card">
-                <div class="member-img-box photo-placeholder">
-                    <!-- ここに写真だけ貼ってください -->
-                    <img src="ここに写真のリンク（URL）を貼ってください" alt="田島諒亮の写真">
-                    <p>PHOTO</p>
-                </div>
-                <div class="member-info">
-                    <span class="role">ENGINEER</span>
-                    <h4>TAJIMA RYOSUKE <span style="font-size:0.9rem; font-weight:normal;">(田島 諒亮)</span></h4>
-                    <div class="motto">"Internal fighting has never made a car go any faster"<br>-Adrian Newey</div>
-                </div>
-            </div>
-
-            <!-- Member 4 -->
-            <div class="member-card">
-                <div class="member-img-box photo-placeholder">
-                    <!-- ここに写真だけ貼ってください -->
-                    <img src="ここに写真のリンク（URL）を貼ってください" alt="矢田一喜の写真">
-                    <p>PHOTO</p>
-                </div>
-                <div class="member-info">
-                    <span class="role">CMO / CHIEF MARKETING OFFICER</span>
-                    <h4>YADA IKKI <span style="font-size:0.9rem; font-weight:normal;">(矢田 一喜)</span></h4>
-                    <div class="motto">"Whether you think you can or you think you can't, you're right"<br>-Henry Ford</div>
-                </div>
-            </div>
-
-            <!-- Member 5 -->
-            <div class="member-card">
-                <div class="member-img-box photo-placeholder">
-                    <!-- ここに写真だけ貼ってください -->
-                    <img src="ここに写真のリンク（URL）を貼ってください" alt="溝添航生の画像">
-                    <p>PHOTO</p>
-                </div>
-                <div class="member-info">
-                    <span class="role">BUSINESS OFFICER</span>
-                    <h4>MIZOZOE KOKI <span style="font-size:0.9rem; font-weight:normal;">(溝添 航生)</span></h4>
-                    <div class="motto">"Life is like riding a bicycle. To keep your balance, you must keep moving"<br>- Albert Einstein</div>
-                </div>
+        <div style="margin-top: 48px;">
+            <h3 style="font-family: var(--font-en); font-size: 1.5rem; margin-bottom: 24px;">MEMBER CARDS</h3>
+            
+            <!-- メンバー紹介カード全体の画像プレースホルダー -->
+            <div class="photo-placeholder">
+                <img src="ここにメンバー各自のカード画像（まとめたもの等）のURL" alt="メンバーカード一覧">
+                <p>※ここに「メンバーそれぞれのカード（5名分）」写真を貼ってください</p>
             </div>
         </div>
     </section>
@@ -1003,14 +851,10 @@
             <h2>ACTIVITY</h2>
         </div>
 
-        <p style="color:var(--gray); margin-bottom: 24px;">#ここは活動報告の場。ブログみたいにやっていこうかな</p>
-
         <div style="border: 1px solid var(--light-gray); padding: 32px;">
-            <span style="font-family: var(--font-en); font-size: 0.85rem; color: var(--gray);">ΧΧ.ΧΧ.2026</span>
-            <h3 class="lang-jp" style="font-size: 1.5rem; margin: 12px 0;">○○を○○しました</h3>
-            <h3 class="lang-en" style="font-size: 1.5rem; margin: 12px 0;">We did OO at 00</h3>
-            <p class="lang-jp">など</p>
-            <p class="lang-en">etc.</p>
+            <span style="font-family: var(--font-en); font-size: 0.85rem; color: var(--gray);">XX.XX.2026</span>
+            <h3 class="lang-jp" style="font-size: 1.5rem; margin: 12px 0;">活動報告タイトル</h3>
+            <h3 class="lang-en" style="font-size: 1.5rem; margin: 12px 0;">Activity Title</h3>
             <a href="#" class="arrow-link">→ VIEW ALL</a>
         </div>
     </section>
@@ -1023,34 +867,21 @@
         </div>
 
         <div class="lang-jp">
-            <p>FRacingは、福岡県初のSTEM Racingチームとして、福岡から世界への挑戦を続けています。</p>
+            <p>F<sup>RACING</sup> は、福岡県初のSTEM Racingチームとして、福岡から世界への挑戦を続けています。</p>
             <p>私たちが目指しているのは、ただ速いマシンをつくることではありません。</p>
             <p>Engineering、Manufacturing、Marketing、Sponsorship、Team Managementなど、さまざまな分野の力を結集し、一つのチームとして新しい価値を生み出すことに挑戦しています。</p>
-            <p>その挑戦を続け、その挑戦をさらに前へ進めるためには、私たちだけの力ではなく、企業や団体の皆さまとのつながりが必要です。</p>
+            <p>その挑戦を続け、その挑戦をさらに前へ進めるためには、私達だけの力ではなく、企業や団体の皆さまとのつながりが必要です。</p>
             <p>スポンサーの皆さまには、資金面だけでなく、技術・知識・経験・ネットワークなど、それぞれの強みを活かした形で私たちの挑戦を支えていただきたいと考えています。</p>
             <p>福岡から世界へ。私たちの挑戦を、次の世代へつながる挑戦に。</p>
         </div>
 
-        <!-- Tiers Table -->
-        <table class="sponsor-table">
-            <thead>
-                <tr>
-                    <th>プラン項目</th>
-                    <th>Bronze<br>¥1,000~19,999</th>
-                    <th>Silver<br>¥20,000~99,999</th>
-                    <th>Gold<br>¥100,000~199,999</th>
-                    <th>Platinum<br>¥200,000~499,999</th>
-                    <th>Title Partner<br>¥500,000~</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>HPへの掲載 / SNSへの掲載 / 感謝状 / 活動報告</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-                <tr><td>ガレージヘロゴ掲載 / ユニフォームへのロゴ掲載</td><td>-</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-                <tr><td>HP・SNSでの詳細な紹介 / 詳細な活動報告 / マシンへのロゴ掲載</td><td>-</td><td>-</td><td>✓</td><td>✓</td><td>✓</td></tr>
-                <tr><td>イベント等でのプロモーション / マシンレプリカの贈呈</td><td>-</td><td>-</td><td>-</td><td>✓</td><td>✓</td></tr>
-                <tr><td>ユニフォーム・マシンへの大型ロゴの掲載 / スポンサー専用特集</td><td>-</td><td>-</td><td>-</td><td>-</td><td>✓</td></tr>
-            </tbody>
-        </table>
+        <!-- スポサープラン（Tier表）の画像プレースホルダー -->
+        <div style="margin-top: 48px;">
+            <div class="photo-placeholder dark">
+                <img src="ここにスポンサー表（Tier表）の画像URL" alt="スポンサープラン表">
+                <p>※ここに「スポンサーの表（Tier表）」写真を貼ってください</p>
+            </div>
+        </div>
 
         <!-- Technical Partners -->
         <div style="border:1px solid var(--border-dark); padding:32px; margin-top:32px; background-color:var(--dark-gray);">
@@ -1063,14 +894,8 @@
             </div>
         </div>
 
-        <div style="margin-top: 32px;">
-            <p><strong>Our Partner</strong></p>
-            <p style="color: var(--gray);">#スポンサー企業一覧と紹介文、ロゴ</p>
-            <p style="font-size:0.85rem; color:var(--gray);">Title Partner / Platinum / Gold / Silver / Bronze / Technical Partner</p>
-        </div>
-
         <div class="lang-jp" style="margin-top: 32px; border-top: 1px solid var(--border-dark); padding-top: 24px;">
-            <p>FRacingの挑戦に共感し、私達とともに未来をつくってくださるパートナーを募集しています。</p>
+            <p>F<sup>RACING</sup> の挑戦に共感し、私達とともに未来をつくってくださるパートナーを募集しています。</p>
             <p>スポンサーシップの内容や協賛方法について、詳しくご説明いたします。</p>
             <p>企業・団体の皆さまからのご連絡をお待ちしています。</p>
             <p>一緒に、福岡から世界へ。</p>
@@ -1086,23 +911,23 @@
         </div>
 
         <div class="lang-jp">
-            <p style="margin-bottom: 32px;">FRacingへのお問い合わせはこちらからお願いいたします。スポンサーシップ、協業、メディア掲載、その他のお問い合わせを受け付けています。</p>
+            <p style="margin-bottom: 32px;">F<sup>RACING</sup> へのお問い合わせはこちらからお願いいたします。スポンサーシップ、協業、メディア掲載、その他のお問い合わせを受け付けています。</p>
         </div>
         <div class="lang-en">
-            <p style="margin-bottom: 32px;">Please use this form to contact FRacing. We welcome inquiries regarding sponsorship, partnerships, media coverage, and other matters.</p>
+            <p style="margin-bottom: 32px;">Please use this form to contact F<sup>RACING</sup>. We welcome inquiries regarding sponsorship, partnerships, media coverage, and other matters.</p>
         </div>
 
         <div class="contact-card">
             <h4>SPONSORSHIP</h4>
-            <p class="lang-jp">FRacingの活動をスポンサーとして支援していただける企業・団体の方はこちらからお問い合わせください。チームの活動内容やスポンサーシップの詳細については、SPONSORページをご覧ください。</p>
-            <p class="lang-en">Companies and organizations interested in supporting FRacing's activities as sponsors should contact us here. For more information about the team's activities and sponsorship details, please visit the SPONSOR page.</p>
+            <p class="lang-jp">F<sup>RACING</sup> の活動をスポンサーとして支援していただける企業・団体の方はこちらからお問い合わせください。チームの活動内容やスポンサーシップの詳細については、SPONSORページをご覧ください。</p>
+            <p class="lang-en">Companies and organizations interested in supporting F<sup>RACING</sup>'s activities as sponsors should contact us here. For more information about the team's activities and sponsorship details, please visit the SPONSOR page.</p>
             <a href="#" class="arrow-link"><span class="lang-jp">→ スポンサーについて問い合わせる</span><span class="lang-en">→ Inquire about sponsorship</span></a>
         </div>
 
         <div class="contact-card">
             <h4>SUPPORT OUR CHALLENGE</h4>
-            <p class="lang-jp">FRacingの挑戦を応援してくださる方へ。クラウドファンディングを通じて、僕たちの世界大会への挑戦を支援していただけます。</p>
-            <p class="lang-en">To those who wish to support FRacing's challenge: You can support our quest to compete in the world championship through crowdfunding.</p>
+            <p class="lang-jp">F<sup>RACING</sup> の挑戦を応援してくださる方へ。クラウドファンディングを通じて、僕たちの世界大会への挑戦を支援していただけます。</p>
+            <p class="lang-en">To those who wish to support F<sup>RACING</sup>'s challenge: You can support our quest to compete in the world championship through crowdfunding.</p>
             <a href="#" class="arrow-link"><span class="lang-jp">→ クラウドファンディングで応援する</span><span class="lang-en">→ Support us via crowdfunding</span></a>
         </div>
 
@@ -1115,22 +940,22 @@
 
         <div class="contact-card">
             <h4>MEDIA</h4>
-            <p class="lang-jp">FRacingへの取材、記事・Webメディアへの掲載、出演などに関するお問い合わせはこちらからお願いいたします。</p>
-            <p class="lang-en">Please use this form to inquire about interviews with FRacing, feature articles or web media coverage, or appearances.</p>
+            <p class="lang-jp">F<sup>RACING</sup> への取材、記事・Webメディアへの掲載、出演などに関するお問い合わせはこちらからお願いいたします。</p>
+            <p class="lang-en">Please use this form to inquire about interviews with F<sup>RACING</sup>, feature articles or web media coverage, or appearances.</p>
             <a href="#" class="arrow-link"><span class="lang-jp">→ メディアについて問い合わせる</span><span class="lang-en">→ Inquire about media</span></a>
         </div>
 
         <div class="contact-card">
             <h4>GENERAL INQUIRIES</h4>
-            <p class="lang-jp">上記以外のFRacing に関するお問い合わせはこちらからお願いいたします。</p>
-            <p class="lang-en">Please use this form for any other inquiries regarding FRacing.</p>
+            <p class="lang-jp">上記以外のF<sup>RACING</sup> に関するお問い合わせはこちらからお願いいたします。</p>
+            <p class="lang-en">Please use this form for any other inquiries regarding F<sup>RACING</sup>.</p>
             <a href="#" class="arrow-link"><span class="lang-jp">→ その他のお問い合わせ</span><span class="lang-en">→ Other inquiries</span></a>
         </div>
 
         <div style="margin-top: 48px;">
             <h4 style="font-family: var(--font-en);">SOCIAL MEDIA</h4>
-            <p class="lang-jp">FRacingの活動や最新情報は、各SNSでも発信しています。</p>
-            <p class="lang-en">We also share updates on FRacing's activities and the latest news on our social media channels.</p>
+            <p class="lang-jp">F<sup>RACING</sup> の活動や最新情報は、各SNSでも発信しています。</p>
+            <p class="lang-en">We also share updates on F<sup>RACING</sup>'s activities and the latest news on our social media channels.</p>
             <p style="margin-top: 12px;">
                 X: <a href="https://x.com/FtotheRacing" target="_blank" style="text-decoration:underline;">https://x.com/FtotheRacing</a><br>
                 Instagram: <a href="https://www.instagram.com/f_to_the_racing/?hl=ja" target="_blank" style="text-decoration:underline;">https://www.instagram.com/f_to_the_racing/?hl=ja</a><br>
@@ -1140,8 +965,8 @@
 
         <div style="margin-top: 32px;">
             <h4 style="font-family: var(--font-en);">EMAIL</h4>
-            <p class="lang-jp">FRacingへのお問い合わせは、以下のメールアドレスからも受け付けています。</p>
-            <p class="lang-en">We also accept inquiries regarding FRacing at the email address below.</p>
+            <p class="lang-jp">F<sup>RACING</sup> へのお問い合わせは、以下のメールアドレスからも受け付けています。</p>
+            <p class="lang-en">We also accept inquiries regarding F<sup>RACING</sup> at the email address below.</p>
             <p style="font-weight:700; margin-top:8px;">fracing2026@gmail.com</p>
         </div>
 
@@ -1155,11 +980,11 @@
     <!-- 31. FOOTER -->
     <footer>
         <div>
-            <div class="logo">F^RACING</div>
+            <div class="logo">F<sup>RACING</sup></div>
             <p style="font-family: var(--font-en); font-size: 0.85rem; color: var(--gray);">SPEED IS THE RESULT.</p>
         </div>
         <div>
-            <p style="font-family: var(--font-en); font-size: 0.8rem; color: var(--gray);">&copy; 2026 F^RACING All Rights Reserved.</p>
+            <p style="font-family: var(--font-en); font-size: 0.8rem; color: var(--gray);">&copy; 2026 F<sup>RACING</sup> All Rights Reserved.</p>
         </div>
     </footer>
 
