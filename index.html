@@ -3,192 +3,1272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F^Racing | Fukuoka's First STEM Racing Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================
+           CSS VARIABLES & RESET
+           ========================================== */
+        :root {
+            --bg-main: #FFFFFF;
+            --bg-dark: #0A0A0A;
+            --bg-dark-sub: #1A1A1A;
+            --text-main: #0A0A0A;
+            --text-light: #FFFFFF;
+            --gray-text: #6B6B6B;
+            --border-light: #E8E8E8;
+            --border-dark: #333333;
+            --accent: #E53935; /* モータースポーツを引き締めるアクセント（必要最小限に使用） */
+            
+            --font-en: 'Inter', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+            
+            --max-width: 1440px;
+            --padding-desktop-x: 96px;
+        }
 
-    <title>FRacing | Speed is the result.</title>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <meta
-        name="description"
-        content="FRacing — STEM Racing Team from Kurume University Fusetsu High School."
-    >
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
+        body {
+            font-family: var(--font-jp);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==========================================
+           HEADER
+           ========================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--padding-desktop-x);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: var(--font-en);
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-family: var(--font-en);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-main);
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* ==========================================
+           COMMON LAYOUT UTILITIES
+           ========================================== */
+        section {
+            padding: 140px var(--padding-desktop-x);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section-header {
+            margin-bottom: 80px;
+        }
+
+        .section-header .sub-title {
+            font-family: var(--font-en);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-en);
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================
+           09. HERO SECTION
+           ========================================== */
+        #hero {
+            height: 100vh;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 var(--padding-desktop-x) 96px var(--padding-desktop-x);
+            position: relative;
+            overflow: hidden;
+            border-bottom: none;
+        }
+
+        .hero-bg-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 100%), #1a1a1a; /* 実運用時はここに高品質なマシンやCADの写真を設定 */
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--max-width);
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-en);
+            font-size: clamp(4rem, 8vw, 7.5rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero-sub {
+            font-family: var(--font-en);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hero-jp {
+            font-size: 1rem;
+            color: #AAAAAA;
+        }
+
+        /* ==========================================
+           10. HOME INTRODUCTION (WE ARE FARACING)
+           ========================================== */
+        #intro {
+            background-color: var(--bg-main);
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .intro-left h3 {
+            font-family: var(--font-en);
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .intro-right p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: #222222;
+        }
+
+        .intro-right .en-text {
+            font-family: var(--font-en);
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            margin-bottom: 32px;
+        }
+
+        .text-link {
+            font-family: var(--font-en);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s;
+        }
+
+        .text-link:hover {
+            gap: 16px;
+        }
+
+        /* ==========================================
+           11 & 12. ABOUT US & WHY F^RACING
+           ========================================== */
+        #about {
+            background-color: var(--bg-main);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+            margin-bottom: 120px;
+        }
+
+        .about-block h4 {
+            font-family: var(--font-en);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .about-block p {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .visual-statement {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 80px;
+            text-align: center;
+            margin-bottom: 120px;
+        }
+
+        .visual-statement p {
+            font-size: clamp(1.25rem, 2vw, 2rem);
+            font-family: var(--font-en);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        /* Why F^Racing Visual Structure */
+        .why-container {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .why-f-main {
+            font-family: var(--font-en);
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+
+        .why-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+            text-align: left;
+        }
+
+        .pillar-card {
+            border-top: 2px solid var(--text-main);
+            padding-top: 24px;
+        }
+
+        .pillar-card h5 {
+            font-family: var(--font-en);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pillar-card p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        /* ==========================================
+           13. OUR CONCEPT
+           ========================================== */
+        #concept {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        #concept .section-header .sub-title {
+            color: var(--gray-text);
+        }
+
+        .concept-diagram {
+            margin: 80px 0;
+            padding: 60px;
+            border: 1px solid var(--border-dark);
+            display: inline-block;
+            width: 100%;
+            max-width: 1000px;
+            background: var(--bg-dark-sub);
+        }
+
+        .concept-speed-node {
+            font-family: var(--font-en);
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 48px;
+            display: inline-block;
+            border-bottom: 2px solid var(--text-light);
+            padding-bottom: 8px;
+        }
+
+        .concept-nodes-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        .c-node {
+            font-family: var(--font-en);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 16px 8px;
+            background: #242424;
+            border: 1px solid var(--border-dark);
+        }
+
+        .concept-desc {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            color: #CCCCCC;
+            line-height: 1.8;
+        }
+
+        /* ==========================================
+           14. MISSION & VISION
+           ========================================== */
+        #mission-vision {
+            background-color: var(--bg-main);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 96px;
+        }
+
+        .mv-card {
+            border-left: 2px solid var(--text-main);
+            padding-left: 48px;
+        }
+
+        .mv-card .sub-title {
+            font-family: var(--font-en);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .mv-card h3 {
+            font-family: var(--font-en);
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .mv-card p {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.8;
+        }
+
+        /* ==========================================
+           15. CHALLENGE
+           ========================================== */
+        #challenge {
+            background-color: var(--bg-main);
+        }
+
+        .challenge-process {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--border-light);
+            padding: 40px;
+            margin-bottom: 64px;
+            font-family: var(--font-en);
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .challenge-anchor {
+            font-family: var(--font-en);
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            text-align: center;
+            margin-top: 64px;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================
+           16 & 17. ENGINEERING
+           ========================================== */
+        #engineering {
+            background-color: var(--bg-main);
+        }
+
+        .eng-process-flow {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+            margin: 64px 0;
+        }
+
+        .eng-step {
+            background: #F9F9F9;
+            border: 1px solid var(--border-light);
+            padding: 24px 16px;
+            font-family: var(--font-en);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        .eng-details-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 64px;
+            align-items: center;
+            margin-top: 64px;
+        }
+
+        .eng-visual-box {
+            background: var(--bg-dark);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+            font-family: var(--font-en);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* ==========================================
+           18. BUSINESS
+           ========================================== */
+        #business {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        #business .section-header .sub-title {
+            color: var(--gray-text);
+        }
+
+        .business-hero-text {
+            font-family: var(--font-en);
+            font-size: clamp(2rem, 3.5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 64px;
+            text-transform: uppercase;
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .biz-card {
+            background: var(--bg-dark-sub);
+            border: 1px solid var(--border-dark);
+            padding: 48px 32px;
+        }
+
+        .biz-card h4 {
+            font-family: var(--font-en);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+        }
+
+        .biz-card p {
+            color: #AAAAAA;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ==========================================
+           19. MEMBERS (THE TEAM)
+           ========================================== */
+        #members {
+            background-color: var(--bg-main);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+
+        .member-card {
+            border: 1px solid var(--border-light);
+            padding: 40px;
+            background: #FAFAFA;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .member-photo {
+            width: 140px;
+            height: 160px;
+            background: #E0E0E0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-en);
+            font-size: 0.75rem;
+            color: var(--gray-text);
+        }
+
+        .member-info .position {
+            font-family: var(--font-en);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .member-info h4 {
+            font-family: var(--font-en);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .member-info .jp-name {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-left: 8px;
+            font-weight: 400;
+        }
+
+        .member-info .motto {
+            font-family: var(--font-en);
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #444444;
+            border-left: 2px solid var(--text-main);
+            padding-left: 12px;
+            margin-top: 12px;
+        }
+
+        /* ==========================================
+           20. ACTIVITY
+           ========================================== */
+        #activity {
+            background-color: var(--bg-main);
+        }
+
+        .activity-featured {
+            border: 1px solid var(--border-light);
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            margin-bottom: 48px;
+        }
+
+        .activity-img-placeholder {
+            background: var(--bg-dark);
+            min-height: 350px;
+        }
+
+        .activity-content {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .activity-meta {
+            font-family: var(--font-en);
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .activity-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        /* ==========================================
+           21 & 22. SPONSOR & TIERS TABLE
+           ========================================== */
+        #sponsor {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        #sponsor .section-header .sub-title {
+            color: var(--gray-text);
+        }
+
+        .sponsor-intro {
+            max-width: 800px;
+            font-size: 1.1rem;
+            color: #CCCCCC;
+            line-height: 1.8;
+            margin-bottom: 64px;
+        }
+
+        /* Tiers Table */
+        .sponsor-table-container {
+            overflow-x: auto;
+            margin-bottom: 80px;
+        }
+
+        .sponsor-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .sponsor-table th, .sponsor-table td {
+            border: 1px solid var(--border-light);
+            padding: 16px 12px;
+        }
+
+        .sponsor-table th {
+            background: #F4F4F4;
+            font-family: var(--font-en);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .sponsor-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            background: #F9F9F9;
+        }
+
+        /* Technical Partner Block */
+        .tech-partner-box {
+            background: var(--bg-dark-sub);
+            border: 1px solid var(--border-dark);
+            padding: 64px;
+            margin-top: 64px;
+        }
+
+        .tech-partner-box h3 {
+            font-family: var(--font-en);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .tech-partner-box p {
+            color: #AAAAAA;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            max-width: 800px;
+        }
+
+        /* ==========================================
+           24 & 25. CONTACT & SOCIAL MEDIA
+           ========================================== */
+        #contact {
+            background-color: var(--bg-main);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        .contact-category-card {
+            border: 1px solid var(--border-light);
+            padding: 40px;
+            background: #FAFAFA;
+            margin-bottom: 24px;
+        }
+
+        .contact-category-card h4 {
+            font-family: var(--font-en);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .contact-category-card p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .social-email-info {
+            border-top: 1px solid var(--border-light);
+            padding-top: 48px;
+            margin-top: 48px;
+        }
+
+        .social-email-info h5 {
+            font-family: var(--font-en);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .social-links-list {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .social-links-list a {
+            font-family: var(--font-en);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: underline;
+        }
+
+        /* ==========================================
+           31. FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 96px var(--padding-desktop-x);
+            border-top: 1px solid var(--border-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .footer-logo {
+            font-family: var(--font-en);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .footer-tagline {
+            font-family: var(--font-en);
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-right p {
+            font-family: var(--font-en);
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        /* ==========================================
+           RESPONSIVE DESIGN (MOBILE & TABLET)
+           ========================================== */
+        @media (max-width: 1199px) {
+            :root {
+                --padding-desktop-x: 48px;
+            }
+            .concept-nodes-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            :root {
+                --padding-desktop-x: 24px;
+            }
+            .nav-links {
+                display: none; /* 実運用時はハンバーガーメニュー等に展開 */
+            }
+            #intro, .about-grid, .mv-grid, .members-grid, .eng-details-grid, .business-grid, .contact-grid, footer {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .eng-process-flow {
+                grid-template-columns: 1fr;
+            }
+            .concept-nodes-grid {
+                grid-template-columns: 1fr;
+            }
+            .activity-featured {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 48px;
+            }
+            .footer-right {
+                text-align: left;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <a href="index.html" class="logo">FRacing</a>
-
-        <nav class="nav">
-            <a href="#about">ABOUT US</a>
-            <a href="#concept">CONCEPT</a>
-            <a href="#engineering">ENGINEERING</a>
-            <a href="#team">TEAM</a>
-            <a href="#sponsors">SPONSORS</a>
+    <!-- 08. HEADER -->
+    <header>
+        <div class="logo">F^RACING</div>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#concept">Concept</a>
+            <a href="#challenge">Challenge</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#business">Business</a>
+            <a href="#sponsor">Sponsor</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    <!-- 09. HOME HERO -->
+    <section id="hero">
+        <div class="hero-bg-visual"></div>
+        <div class="hero-content">
+            <div class="hero-sub">Fukuoka's First STEM Racing Team</div>
+            <h1>SPEED IS THE RESULT.</h1>
+            <p class="hero-jp">速さは、築き上げるもの。</p>
+        </div>
+    </section>
 
-    <!-- Hero -->
-    <main>
+    <!-- 10. HOME INTRODUCTION -->
+    <section id="intro">
+        <div class="intro-left">
+            <h3>WE ARE<br>F^RACING</h3>
+        </div>
+        <div class="intro-right">
+            <p>久留米大学附設高等学校の高校生で構成された、福岡県で初のSTEM Racing に挑戦するチームです。</p>
+            <p class="en-text">We are a team composed of high school students from Kurume University High School, and we are the first team in Fukuoka Prefecture to take on the STEM Racing challenge.</p>
+            <a href="#about" class="text-link">→ ABOUT US</a>
+        </div>
+    </section>
 
-        <section class="hero">
-            <div class="hero-content">
-                <p class="hero-label">STEM RACING TEAM</p>
+    <!-- 11 & 12. ABOUT US & WHY F^RACING -->
+    <section id="about">
+        <div class="section-header">
+            <span class="sub-title">Who We Are</span>
+            <h2>ABOUT US</h2>
+        </div>
 
-                <h1>
-                    SPEED<br>
-                    IS THE<br>
-                    RESULT.
-                </h1>
+        <div class="about-grid">
+            <div class="about-block">
+                <h4>チーム紹介 / Team Overview</h4>
+                <p>私たちは、FRacing (F to the Racing/エフレーシング)です。久留米大学附設高等学校の高校生によって結成された、福岡県初のSTEM Racingに挑戦するチームです。</p>
+                <p>ただレースカーを速く走らせることだけを目指しているわけではありません。一台のマシンを完成させるために、高校生の枠を超えた多角的なアプローチを行っています。</p>
+            </div>
+            <div class="about-block">
+                <h4>多角的なアプローチ / Multifaceted Approach</h4>
+                <p><strong>• Engineering (工学)</strong> —— 設計、シミュレーション、製作、テスト。仮説を立て、実際に試しながらマシンの可能性を追求します。</p>
+                <p><strong>• Business (ビジネス)</strong> —— マーケティング、スポンサー活動、チームのマネジメント。支えてくれる人々とつながり、チームを成長させます。</p>
+            </div>
+        </div>
 
-                <p class="hero-description">
-                    FRacing is a student racing team<br>
-                    from Kurume University Fuzoku High School.
+        <div class="visual-statement">
+            <p>「考え、つくり、試し、学び、また挑戦する。」</p>
+        </div>
+
+        <!-- Why F^Racing -->
+        <div class="why-container">
+            <div class="why-f-main">F<sup>Racing</sup></div>
+            <div class="why-pillars">
+                <div class="pillar-card">
+                    <h5>Fusetsu</h5>
+                    <p>私たちの原点であり、共に学ぶ仲間が集う「久留米大学附設高等学校」</p>
+                </div>
+                <div class="pillar-card">
+                    <h5>Future</h5>
+                    <p>私たちが自らの手で、これから主体的に切り拓いていく「未来」</p>
+                </div>
+                <div class="pillar-card">
+                    <h5>Formula</h5>
+                    <p>私たちが挑戦する「モータースポーツ」と、そこに広がる「技術・工学の世界」</p>
+                </div>
+            </div>
+            <p style="color: var(--gray-text); font-size: 0.95rem; line-height: 1.8;">
+                私たちはこの「F」に「Racing」を指数（乗数）として組み合わせました。レース活動を通じた一つひとつの経験が、「F」の意味を何倍にも大きく深く成長させていきます。
+            </p>
+        </div>
+    </section>
+
+    <!-- 13. OUR CONCEPT -->
+    <section id="concept">
+        <div class="section-header">
+            <span class="sub-title">Our Core Concept</span>
+            <h2>SPEED IS BUILT.</h2>
+        </div>
+        <p class="concept-desc">
+            私たちは、速さは一つの要素だけで生み出されるものではないと考えています。Engineering、Manufacturing、Teamwork、Marketing、Sponsorship——すべての積み重ねが、最後の「速さ」になる。
+        </p>
+
+        <div class="concept-diagram">
+            <div class="concept-speed-node">SPEED</div>
+            <div class="concept-nodes-grid">
+                <div class="c-node">ENGINEERING</div>
+                <div class="c-node">MANUFACTURING</div>
+                <div class="c-node">TEAMWORK</div>
+                <div class="c-node">MARKETING</div>
+                <div class="c-node">SPONSORSHIP</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. MISSION & VISION -->
+    <section id="mission-vision">
+        <div class="mv-grid">
+            <div class="mv-card">
+                <span class="sub-title">Mission</span>
+                <h3>CREATE VALUE<br>FOR SOCIETY.</h3>
+                <p>STEM Racingのさまざまな分野に真剣に向き合い、ひとつの分野で新たなVALUEを生み出す。そして、異なる分野から生まれたVALUEを一つにすることで、社会へ新しい価値を届けます。</p>
+            </div>
+            <div class="mv-card">
+                <span class="sub-title">Vision</span>
+                <h3>INSPIRE THE<br>NEXT GENERATION.</h3>
+                <p>福岡県初のSTEM Racingチームとして、自分たちの挑戦の過程を発信し続けることで、誰かの好奇心を刺激し、新しい一歩を踏み出すきっかけを生み出します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. CHALLENGE -->
+    <section id="challenge">
+        <div class="section-header">
+            <span class="sub-title">STEM Racing</span>
+            <h2>OUR CHALLENGE</h2>
+        </div>
+        <p style="max-width: 800px; margin-bottom: 48px; color: var(--gray-text); line-height: 1.8;">
+            私たちFRacingは、STEM Racingの舞台で、Professionalクラスでの出場、全国大会での上位、そして世界大会への進出を目指しています。福岡から世界へ、一つひとつの挑戦を積み重ねます。
+        </p>
+        <div class="challenge-process">
+            <span>DESIGN</span>
+            <span>→</span>
+            <span>BUILD</span>
+            <span>→</span>
+            <span>TEST</span>
+            <span>→</span>
+            <span>LEARN</span>
+            <span>→</span>
+            <span>RACE</span>
+        </div>
+        <div class="challenge-anchor">FROM FUKUOKA TO THE WORLD.</div>
+    </section>
+
+    <!-- 16 & 17. ENGINEERING -->
+    <section id="engineering">
+        <div class="section-header">
+            <span class="sub-title">Engineering Details</span>
+            <h2>SPEED HAS A REASON.</h2>
+        </div>
+        <p style="color: var(--gray-text); max-width: 800px;">
+            私たちは感覚や経験だけに頼ってマシンをつくるのではなく、「なぜこの形なのか」を一つひとつ確かめることを大切にしています。
+        </p>
+
+        <div class="eng-process-flow">
+            <div class="eng-step">HYPOTHESIS</div>
+            <div class="eng-step">CAD</div>
+            <div class="eng-step">SIMULATION</div>
+            <div class="eng-step">FABRICATION</div>
+            <div class="eng-step">TEST</div>
+            <div class="eng-step">ITERATE</div>
+        </div>
+
+        <div class="eng-details-grid">
+            <div>
+                <h4 style="font-family: var(--font-en); font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">DATA-DRIVEN DEVELOPMENT</h4>
+                <p style="color: var(--gray-text); line-height: 1.8; margin-bottom: 16px;">
+                    3D CADを用いた精密な設計、シミュレーションによる性能検証、3Dプリンター等の製造設備を活用したプロトタイピング、そして空力性能を確かめる風洞試験。
                 </p>
-
-                <a href="#about" class="hero-link">
-                    DISCOVER FRACING →
-                </a>
+                <p style="color: var(--gray-text); line-height: 1.8;">
+                    空力、車体、重量、駆動系。それぞれの要素を追求し、限られた条件の中でより速く合理的な答えを探し続けます。
+                </p>
             </div>
-        </section>
-
-
-        <!-- About -->
-        <section id="about" class="section">
-            <p class="section-label">01 / ABOUT US</p>
-
-            <h2>WHO WE ARE</h2>
-
-            <p class="section-text">
-                私たちは、FRacing（エフレーシング）です。
-            </p>
-
-            <p class="section-text">
-                久留米大学附設高等学校の高校生によって結成された
-                STEM Racingチームとして、Engineering、Manufacturing、
-                Marketing、Businessの力を結集し、速さの本質を追求します。
-            </p>
-        </section>
-
-
-        <!-- Concept -->
-        <section id="concept" class="section concept">
-            <p class="section-label">02 / OUR CONCEPT</p>
-
-            <h2>Speed is the result.</h2>
-
-            <p class="section-text">
-                速さは、一つの要素だけから生まれるものではない。
-            </p>
-
-            <div class="concept-grid">
-
-                <div class="concept-item">
-                    <span>01</span>
-                    <h3>ENGINEERING</h3>
-                    <p>
-                        科学と技術によって、速さを設計する。
-                    </p>
-                </div>
-
-                <div class="concept-item">
-                    <span>02</span>
-                    <h3>MANUFACTURING</h3>
-                    <p>
-                        設計を形にし、性能を引き出す。
-                    </p>
-                </div>
-
-                <div class="concept-item">
-                    <span>03</span>
-                    <h3>TEAMWORK</h3>
-                    <p>
-                        一人ひとりの力を結集し、結果を生み出す。
-                    </p>
-                </div>
-
+            <div class="eng-visual-box">
+                [ TECHNICAL CAD / SIMULATION PREVIEW ]
             </div>
-        </section>
-
-
-        <!-- Engineering -->
-        <section id="engineering" class="section">
-            <p class="section-label">03 / ENGINEERING</p>
-
-            <h2>DESIGNING SPEED.</h2>
-
-            <p class="section-text">
-                空気力学、設計、シミュレーション。
-                数値と理論をもとに、より速いマシンを追求します。
-            </p>
-
-            <a href="engineering.html" class="text-link">
-                EXPLORE ENGINEERING →
-            </a>
-        </section>
-
-
-        <!-- Team -->
-        <section id="team" class="section">
-            <p class="section-label">04 / TEAM</p>
-
-            <h2>ONE TEAM.<br>ONE RESULT.</h2>
-
-            <p class="section-text">
-                異なる専門性を持つメンバーが、
-                一つのマシン、一つの結果に向かって挑戦します。
-            </p>
-
-            <a href="team.html" class="text-link">
-                MEET THE TEAM →
-            </a>
-        </section>
-
-
-        <!-- Sponsors -->
-        <section id="sponsors" class="section sponsors">
-            <p class="section-label">05 / PARTNERS</p>
-
-            <h2>BUILDING THE FUTURE<br>TOGETHER.</h2>
-
-            <p class="section-text">
-                私たちの挑戦を支えてくださる
-                パートナーの皆様とともに、未来を創ります。
-            </p>
-
-            <a href="sponsors.html" class="text-link">
-                OUR PARTNERS →
-            </a>
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-
-        <div class="footer-logo">
-            FRacing
         </div>
+    </section>
 
-        <p>
-            Speed is the result.
+    <!-- 18. BUSINESS -->
+    <section id="business">
+        <div class="section-header">
+            <span class="sub-title">Business & Management</span>
+            <h2>TURNING CONNECTIONS<br>INTO POWER.</h2>
+        </div>
+        <div class="business-grid">
+            <div class="biz-card">
+                <h4>MARKETING</h4>
+                <p>WebsiteやSNS、イベント等を通じてFRacingの挑戦の過程を発信し、応援してくださる人との新しいつながりを生み出します。</p>
+            </div>
+            <div class="biz-card">
+                <h4>PARTNERSHIP</h4>
+                <p>企業や団体の皆さまとパートナーシップを築き、資金面だけでなく技術やネットワークなどの協力を通じて挑戦を前へ進めます。</p>
+            </div>
+            <div class="biz-card">
+                <h4>TEAM MANAGEMENT</h4>
+                <p>スケジュール・予算管理や役割分担を通じてチーム全体を支え、EngineeringとBusinessの力を一つにつなげます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 19. MEMBERS -->
+    <section id="members">
+        <div class="section-header">
+            <span class="sub-title">The Team</span>
+            <h2>MEMBERS</h2>
+        </div>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo">PORTRAIT</div>
+                <div class="member-info">
+                    <span class="position">CEO / Chief Executive Officer</span>
+                    <h4>酒見 颯一郎 <span class="jp-name">SAKEMI SOICHIRO</span></h4>
+                    <div class="motto">"Internal fighting has never made a car go any faster" - Adrian Newey</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo">PORTRAIT</div>
+                <div class="member-info">
+                    <span class="position">CTO / Chief Technology Officer</span>
+                    <h4>志村 叶光紀 <span class="jp-name">SHIMURA HIROKI</span></h4>
+                    <div class="motto">"Regression to the Mean"</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo">PORTRAIT</div>
+                <div class="member-info">
+                    <span class="position">ENGINEER</span>
+                    <h4>田島 諒亮 <span class="jp-name">TAJIMA RYOSUKE</span></h4>
+                    <div class="motto">"Internal fighting has never made a car go any faster" - Adrian Newey</div>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo">PORTRAIT</div>
+                <div class="member-info">
+                    <span class="position">CMO / Chief Marketing Officer</span>
+                    <h4>矢田 一喜 <span class="jp-name">YADA IKKI</span></h4>
+                    <div class="motto">"Whether you think you can or you think you can't, you're right" - Henry Ford</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 20. ACTIVITY -->
+    <section id="activity">
+        <div class="section-header">
+            <span class="sub-title">Latest Updates</span>
+            <h2>ACTIVITY</h2>
+        </div>
+        <div class="activity-featured">
+            <div class="activity-img-placeholder"></div>
+            <div class="activity-content">
+                <div class="activity-meta">2026.XX.XX / REPORT</div>
+                <h3>チーム始動および活動報告について</h3>
+                <p style="color: var(--gray-text); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px;">
+                    福岡県初のSTEM Racingチームとして、FRacingの本格的な活動がスタートしました。設計・開発の進捗を随時公開していきます。
+                </p>
+                <a href="#" class="text-link">→ VIEW ALL ACTIVITIES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 21 & 22. SPONSOR & TIERS -->
+    <section id="sponsor">
+        <div class="section-header">
+            <span class="sub-title">Join Our Journey</span>
+            <h2>SUPPORT US</h2>
+        </div>
+        <p class="sponsor-intro">
+            FRacingの挑戦をさらに前へ進めるため、資金面だけでなく技術・知識・経験など、それぞれの強みを活かしたパートナーを募集しています。一緒に福岡から世界へ。
         </p>
 
-        <div class="footer-links">
-            <a href="#about">ABOUT US</a>
-            <a href="#concept">CONCEPT</a>
-            <a href="#engineering">ENGINEERING</a>
-            <a href="#team">TEAM</a>
-            <a href="#sponsors">SPONSORS</a>
+        <!-- Sponsor Tiers Table -->
+        <div class="sponsor-table-container">
+            <table class="sponsor-table">
+                <thead>
+                    <tr>
+                        <th>支援プラン</th>
+                        <th>Bronze<br><span style="font-size:0.75rem; font-weight:normal;">¥1,000~</span></th>
+                        <th>Silver<br><span style="font-size:0.75rem; font-weight:normal;">¥20,000~</span></th>
+                        <th>Gold<br><span style="font-size:0.75rem; font-weight:normal;">¥100,000~</span></th>
+                        <th>Platinum<br><span style="font-size:0.75rem; font-weight:normal;">¥200,000~</span></th>
+                        <th>Title Partner<br><span style="font-size:0.75rem; font-weight:normal;">¥500,000~</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HPへの掲載 / SNS掲載 / 感謝状</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>ガレージ・ユニフォームロゴ掲載</td>
+                        <td>-</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>マシンへのロゴ掲載</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>スポンサー専用特集 / 大型ロゴ掲載</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <p class="copyright">
-            © 2026 FRacing. All Rights Reserved.
-        </p>
+        <!-- Technical Partner -->
+        <div class="tech-partner-box">
+            <span class="sub-title" style="color: var(--gray-text);">Technical Partners</span>
+            <h3>技術で、挑戦を加速させる。</h3>
+            <p>
+                CADやシミュレーション、3Dプリンティング、加工設備、材料・部品の提供に加え、専門的な知識や技術指導など、企業が持つ技術力を活かした幅広いご支援を想定しています。
+            </p>
+            <a href="#contact" class="text-link" style="color: var(--text-light);">→ INQUIRE ABOUT PARTNERSHIP</a>
+        </div>
+    </section>
 
+    <!-- 24 & 25. CONTACT -->
+    <section id="contact">
+        <div class="section-header">
+            <span class="sub-title">Get In Touch</span>
+            <h2>CONTACT</h2>
+        </div>
+        <div class="contact-grid">
+            <div>
+                <div class="contact-category-card">
+                    <h4>SPONSORSHIP</h4>
+                    <p>スポンサーシップに関するお問い合わせ・詳細のご請求はこちらから。</p>
+                    <a href="#" class="text-link">→ スポンサーについて問い合わせる</a>
+                </div>
+                <div class="contact-category-card">
+                    <h4>SUPPORT OUR CHALLENGE</h4>
+                    <p>クラウドファンディングを通じて僕たちの挑戦を支援していただけます。</p>
+                    <a href="#" class="text-link">→ クラウドファンディングで応援する</a>
+                </div>
+            </div>
+            <div>
+                <div class="contact-category-card">
+                    <h4>COLLABORATION & MEDIA</h4>
+                    <p>企業・学校との協業や、取材・メディア掲載に関するお問い合わせはこちら。</p>
+                    <a href="#" class="text-link">→ 協業・メディアについて問い合わせる</a>
+                </div>
+                <div class="social-email-info">
+                    <h5>SOCIAL MEDIA & EMAIL</h5>
+                    <div class="social-links-list">
+                        <a href="https://x.com/FtotheRacing" target="_blank">X (Twitter)</a>
+                        <a href="https://www.instagram.com/f_to_the_racing/" target="_blank">Instagram</a>
+                        <a href="https://www.youtube.com/@FToTheRacing" target="_blank">YouTube</a>
+                    </div>
+                    <p style="font-family: var(--font-en); font-size: 0.95rem; color: var(--text-main);">fracing2026@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 31. FOOTER -->
+    <footer>
+        <div>
+            <div class="footer-logo">F^RACING</div>
+            <p class="footer-tagline">SPEED IS THE RESULT.</p>
+        </div>
+        <div class="footer-right">
+            <p>&copy; 2026 F^RACING All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
