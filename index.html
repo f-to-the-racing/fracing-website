@@ -431,8 +431,22 @@
 <body data-lang="jp">
 
     <!-- HEADER -->
+    /* ロゴ画像リンクのスタイル */
+.logo-img-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 36px; /* ヘッダーの高さを考慮したサイズ（好みに応じて調整してください） */
+    width: auto;  /* アスペクト比を維持 */
+    display: block;
+}
     <header>
-        <div class="logo">F<sup>RACING</sup></div>
+        <a href="#hero" class="logo-img-link">
+    <img src="ここにロゴ画像のURLまたはパス" alt="F RACING" class="logo-img">
+</a>
         <div class="nav-container">
             <nav class="nav-links">
                 <a href="#about">ABOUT</a>
