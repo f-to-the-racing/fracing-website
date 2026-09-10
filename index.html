@@ -42,7 +42,9 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 言語切り替えCSS表示制御 */
+        /* ------------------------------------------
+           LANGUAGE SWITCHING DISPLAY CONTROL (FIXED)
+           ------------------------------------------ */
         body[data-lang="jp"] .lang-en { display: none !important; }
         body[data-lang="en"] .lang-jp { display: none !important; }
 
@@ -105,10 +107,11 @@
             align-items: center;
             gap: 8px;
             border: 1px solid var(--black);
-            padding: 4px 8px;
+            padding: 6px 12px;
             font-family: var(--font-en);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
+            background-color: var(--white);
         }
 
         .lang-switch button {
@@ -119,6 +122,7 @@
             font-size: inherit;
             font-weight: inherit;
             color: var(--gray);
+            padding: 2px 4px;
         }
 
         .lang-switch button.active {
@@ -528,6 +532,7 @@
                 <a href="#sponsor">SPONSOR</a>
                 <a href="#contact">CONTACT</a>
             </nav>
+            <!-- LANGUAGE SWITCH BUTTON -->
             <div class="lang-switch">
                 <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button>
                 <span>/</span>
