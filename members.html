@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEMBERS | F RACING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="jp">
+  <header>
+    <a href="index.html"><img src="whiteversion.jpg" alt="F RACING" class="logo-img"></a>
+    <div class="nav-container">
+      <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="concept.html">CONCEPT</a>
+        <a href="challenge.html">CHALLENGE</a>
+        <a href="members.html" class="active">MEMBERS</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="lang-switch">
+        <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button><span>/</span><button onclick="setLanguage('en')" id="btn-en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-title-box">
+        <span class="sub">THE TEAM</span>
+        <h2>MEMBERS</h2>
+      </div>
+
+      <div class="image-container">
+        <img src="Group41.png" alt="メンバー組織図">
+      </div>
+
+      <!-- 1枚目の画像の下の挿入エリア -->
+      <div class="member-insert-box">
+        <h3 style="font-size: 2rem; font-weight: 900; color: var(--green); margin-bottom: 12px; font-family: var(--font-en);">INSERT AREA</h3>
+        <p class="lang-jp" style="font-weight: bold;">※ここに役職紹介や追加のメンバー情報などを挿入できます。</p>
+        <p class="lang-en" style="font-weight: bold;">※Additional content or member bios can be inserted here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="font-family: var(--font-en); font-weight: 900; font-size: 1.8rem;">F<sup>RACING</sup></div>
+    <p>&copy; 2026 F<sup>RACING</sup> All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
