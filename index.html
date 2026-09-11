@@ -132,7 +132,7 @@ margin-bottom: 64px;
 }
 .section-title-box h2 {
 font-family: var(--font-en);
-font-size: clamp(2.5rem, 5vw, 4.5rem);
+font-size: clamp(3rem, 6vw, 5.5rem); /* サイズを大きく変更 */
 font-weight: 800;
 line-height: 1.0;
 letter-spacing: -0.03em;
@@ -140,7 +140,7 @@ text-transform: uppercase;
 }
 .section-title-box .sub {
 font-family: var(--font-en);
-font-size: 0.85rem;
+font-size: 1.25rem; /* 0.85remから拡大 */
 font-weight: 700;
 letter-spacing: 0.15em;
 color: var(--gray);
@@ -148,7 +148,6 @@ text-transform: uppercase;
 display: block;
 margin-bottom: 8px;
 }
-/* 画像サイズを適切に制限する共通クラス */
 .image-container {
 width: 100%;
 max-width: 850px;
@@ -201,11 +200,12 @@ margin-bottom: 16px;
 }
 .hero-tag {
 font-family: var(--font-en);
-font-size: 1rem;
+font-size: 1.5rem; /* 1remから拡大 */
 font-weight: 600;
 letter-spacing: 0.1em;
 color: var(--gray);
-text-transform: uppercase; margin-bottom: 8px;
+text-transform: uppercase; 
+margin-bottom: 8px;
 }
 /* INTRO */
 #intro {
@@ -294,7 +294,7 @@ padding-left: 24px;
 }
 .mv-card h3 {
 font-family: var(--font-en);
-font-size: 2rem;
+font-size: 2.75rem; /* 2remから拡大 */
 font-weight: 800;
 margin: 12px 0 16px 0;
 }
@@ -406,16 +406,17 @@ footer { flex-direction: column; align-items: flex-start; gap: 32px; }
 <!-- HOME INTRODUCTION -->
 <section id="intro">
 <div>
-<h2 style="font-family: var(--font-en); font-size: 2.5rem; font-weight: 800;">We Are F<sup>RACING</sup></h2>
+<h2 style="font-family: var(--font-en); font-size: 3rem; font-weight: 800;">We Are F<sup>RACING</sup></h2>
 <p class="lang-jp" style="color: var(--gray); margin-top: 8px;">STEM Racing Team from Fusetsu</p>
 <p class="lang-en" style="color: var(--gray); margin-top: 8px;">STEM Racing Team from Fusetsu</p>
 </div>
 <div>
-<div class="lang-jp" style="display: flex; flex-direction: column; gap: 16px;">
+<!-- フォントサイズを1.25remに拡大 -->
+<div class="lang-jp" style="display: flex; flex-direction: column; gap: 16px; font-size: 1.25rem; font-weight: 500;">
 <p>久留米大学附設高等学校の高校生で構成された、<br>福岡県で初のSTEM Racing に挑戦するチームです。</p>
 <p>Engineering, Business, Marketingなど、<br>それぞれの分野の力を組み合わせて一台のマシン、そして一つのチームをつくっています。</p>
 </div>
-<div class="lang-en" style="display: flex; flex-direction: column; gap: 16px;">
+<div class="lang-en" style="display: flex; flex-direction: column; gap: 16px; font-size: 1.25rem; font-weight: 500;">
 <p>We are a team composed of high school students from Kurume University High School,<br>and we are the first team in Fukuoka Prefecture to take on the STEM Racing challenge.</p>
 <p>Combining our strengths in fields such as<br>Engineering, Business, and Marketing, we are building a single machine and forging a single team.</p>
 </div>
@@ -523,7 +524,7 @@ footer { flex-direction: column; align-items: flex-start; gap: 32px; }
 <p class="lang-jp">私たちのCONCEPTは「SPEED IS BUILT.」です。</p> 
 <p class="lang-en">Our CONCEPT is “SPEED IS BUILT.”</p>
 <div class="image-container">
-<img src="Group44.png" alt="CONCEPT MAP">
+<img src="Group38.png" alt="CONCEPT MAP">
 </div>
 <div class="lang-jp" style="display: flex; flex-direction: column; gap: 16px; margin-top: 32px;">
 <p>私たちは、速さは一つの要素だけで生み出されるものではないと考えています。</p>
@@ -545,7 +546,7 @@ footer { flex-direction: column; align-items: flex-start; gap: 32px; }
 <section id="mission-vision">
 <div class="mv-grid">
 <div class="mv-card">
-<span style="font-family: var(--font-en); font-weight:700; color:var(--gray); font-size: 0.85rem;">OUR MISSION</span>
+<span style="font-family: var(--font-en); font-weight:700; color:var(--gray); font-size: 1.25rem;">OUR MISSION</span>
 <h3>CREATE VALUE FOR SOCIETY.</h3>
 <div class="lang-jp" style="display: flex; flex-direction: column; gap: 12px;">
 <p>私たちのMISSIONは、「CREATE VALUE FOR SOCIETY.」です。</p>
@@ -563,7 +564,7 @@ footer { flex-direction: column; align-items: flex-start; gap: 32px; }
 </div>
 </div>
 <div class="mv-card">
-<span style="font-family: var(--font-en); font-weight:700; color:var(--gray); font-size: 0.85rem;">OUR VISION</span>
+<span style="font-family: var(--font-en); font-weight:700; color:var(--gray); font-size: 1.25rem;">OUR VISION</span>
 <h3>INSPIRE THE NEXT GENERATION.</h3> 
 <div class="lang-jp" style="display: flex; flex-direction: column; gap: 12px;">
 <p>私たちのVISIONは「INSPIRE THE NEXT GENERATION.」です。</p>
@@ -728,6 +729,7 @@ footer { flex-direction: column; align-items: flex-start; gap: 32px; }
 <h2>LATEST UPDATES</h2>
 </div>
 <div class="lang-jp">
+<p>#ここは活動報告の場。ブログみたいにやっていこうかな</p>
 </div>
 <div class="lang-en">
 <p>XX.XX.2026<br>We did OO at OO<br>etc.<br><a href="#" style="text-decoration: underline;">→VIEW ALL</a></p>
@@ -835,7 +837,7 @@ footer { flex-direction: column; align-items: flex-start; gap: 32px; }
 <footer>
 <div>
 <div class="logo" style="font-family: var(--font-en); font-weight: 800; font-size: 1.5rem; margin-bottom: 8px;">F<sup>RACING</sup></div>
-<p style="font-family: var(--font-en); font-size: 0.85rem; color: var(--gray);">SPEED IS BUILT.</p>
+<p style="font-family: var(--font-en); font-size: 0.85rem; color: var(--gray);">SPEED IS THE RESULT.</p>
 </div>
 <div>
 <p style="font-family: var(--font-en); font-size: 0.8rem; color: var(--gray);">&copy; 2026 F<sup>RACING</sup> All Rights Reserved.</p>
