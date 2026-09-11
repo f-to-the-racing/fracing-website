@@ -15,14 +15,12 @@
         <a href="index.html">HOME</a>
         <a href="about.html" class="active">ABOUT</a>
         <a href="concept.html">CONCEPT</a>
-        <a href="challenge.html">CHALLENGE & TECH</a>
+        <a href="challenge.html">CHALLENGE</a>
         <a href="members.html">MEMBERS</a>
-        <a href="contact.html">CONTACT & SPONSOR</a>
+        <a href="contact.html">CONTACT</a>
       </nav>
       <div class="lang-switch">
-        <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button>
-        <span>/</span>
-        <button onclick="setLanguage('en')" id="btn-en">EN</button>
+        <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button><span>/</span><button onclick="setLanguage('en')" id="btn-en">EN</button>
       </div>
     </div>
   </header>
@@ -33,40 +31,99 @@
         <span class="sub">WHO WE ARE</span>
         <h2>ABOUT US</h2>
       </div>
-      <div class="custom-card">
-        <div class="lang-jp" style="font-size: 1.25rem;">
-          <p>私たちは、F<sup>RACING</sup>（エフレーシング）です。久留米大学附設高等学校の高校生によって結成された、福岡県で初のSTEM Racingに挑戦するチームです。</p>
+      
+      <div class="custom-card lang-jp" style="display: flex; flex-direction: column; gap: 20px; font-size: 1.2rem;">
+        <p>私たちは、F<sup>RACING</sup>（F to the Racing/エフレーシング）です。</p>
+        <p>F<sup>RACING</sup>は、久留米大学附設高等学校の高校生によって結成された、福岡県で初のSTEM Racingに挑戦するチームです。</p>
+        <p>私たちは、ただレースカーを速く走らせることだけを目指しているわけではありません。一台のマシンを完成させるために、高校生の枠を超えた多角的なアプローチを行っています。</p>
+        
+        <div style="margin-top: 16px; padding: 24px; background-color: var(--light-green); border-radius: 8px;">
+          <p class="accent-text" style="font-size: 1.4rem;">● Engineering（工学） ── 設計、シミュレーション、製作、テスト</p>
+          <p style="margin-top: 8px;">仮説を立て、実際に試し、得られた結果を次の設計へつなげる。試行錯誤を繰り返しながら、マシンの可能性を追求します。</p>
         </div>
-        <div class="lang-en" style="font-size: 1.25rem;">
-          <p>We are F<sup>RACING</sup>, the first team in Fukuoka Prefecture to challenge STEM Racing, formed by Kurume University High School students.</p>
+        
+        <div style="padding: 24px; background-color: var(--light-green); border-radius: 8px;">
+          <p class="accent-text" style="font-size: 1.4rem;">● Business（ビジネス） ── マーケティング、スポンサー活動、チームのマネジメント</p>
+          <p style="margin-top: 8px;">技術だけでは、挑戦を続けることはできません。自分たちの活動を自分たちの言葉で伝え、支えてくれる人々とつながり、チームそのものを成長させていきます。</p>
+        </div>
+        
+        <div style="margin-top: 32px; font-weight: 700; font-size: 1.5rem; text-align: center; color: var(--green-dark);">
+          <p>考え、つくり、試し、学び、また挑戦する。</p>
+        </div>
+        <p style="text-align: center;">その積み重ねによって、一台のマシンだけでなく、チームそのものをつくっていく。<br>サーキットの上だけでなく、そのプロセスに転がるすべての経験と成長が、私たちF<sup>RACING</sup>です。</p>
+      </div>
+
+      <div class="custom-card lang-en" style="display: flex; flex-direction: column; gap: 20px; font-size: 1.2rem;">
+        <p>We are F<sup>RACING</sup> (F to the Racing).</p>
+        <p>F<sup>RACING</sup> is a team formed by high school students at Kurume University Fusetsu High School, and we are the first team in Fukuoka Prefecture to take on the challenge of STEM racing.</p>
+        <p>Our goal is not simply to make our race car go fast. To build a complete machine, we take a multifaceted approach that goes beyond the scope of typical high school students.</p>
+        
+        <div style="margin-top: 16px; padding: 24px; background-color: var(--light-green); border-radius: 8px;">
+          <p class="accent-text" style="font-size: 1.4rem;">● Engineering — Design, Simulation, Fabrication, Testing</p>
+          <p style="margin-top: 8px;">We formulate hypotheses, test them in practice, and apply the results to our next design. Through repeated trial and error, we explore the full potential of our machine.</p>
+        </div>
+        
+        <div style="padding: 24px; background-color: var(--light-green); border-radius: 8px;">
+          <p class="accent-text" style="font-size: 1.4rem;">● Business — Marketing, Sponsorship Activities, Team Management</p>
+          <p style="margin-top: 8px;">Technology alone is not enough to sustain our challenges. We communicate our activities in our own words, connect with those who support us, and foster the growth of the team itself.</p>
+        </div>
+        
+        <div style="margin-top: 32px; font-weight: 700; font-size: 1.5rem; text-align: center; color: var(--green-dark);">
+          <p>We think, build, test, learn, and then challenge ourselves again.</p>
+        </div>
+        <p style="text-align: center;">Through this cumulative process, we build not just a single machine, but the team itself.<br>It is not just what happens on the racetrack, but all the experiences and growth woven into that process that define us as F<sup>RACING</sup>.</p>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <h2 style="text-align: center; font-family: var(--font-en); font-size: 4rem; margin-bottom: 32px; color: var(--green);">WHY F<sup>RACING</sup></h2>
+      <div class="lang-jp" style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+        <p>私たちのチーム名「F<sup>RACING</sup>」には、私たちがこの活動に懸けるさまざまな想いと挑戦の軌跡が詰め込まれています。その中心にあるのが、「F」という一文字です。</p>
+        <p>私たちにとって「F」は、固定された意味を持つ言葉ではありません。常に進化し、新しい価値を象徴し続ける文字です。その代表となる3つの柱を紹介します。</p>
+      </div>
+      <div class="lang-en" style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+        <p>Our team name, “F<sup>RACING</sup>,” embodies the various aspirations we have for this endeavor and the journey of challenges we’ve undertaken. At its core lies a single letter: “F.”</p>
+        <p>For us, “F” is not a word with a fixed meaning. It is a letter that constantly evolves and continues to symbolize new values. Here, we introduce the three pillars that represent this.</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="custom-card">
+          <h4>Fusetsu（附設）</h4>
+          <p class="lang-jp">私たちの原点であり、共に学ぶ仲間が集う「久留米大学附設高等学校」</p>
+          <p class="lang-en">“Kurume University Fusetsu High School,” our starting point and the place where fellow students gather to learn together</p>
+        </div>
+        <div class="custom-card">
+          <h4>Future（未来）</h4>
+          <p class="lang-jp">私たちが自らの手で、これから主体的に切り拓いていく「未来」</p>
+          <p class="lang-en">The “future” that we will proactively carve out with our own hands</p>
+        </div>
+        <div class="custom-card">
+          <h4>Formula（フォーミュラ）</h4>
+          <p class="lang-jp">私たちが挑戦する「モータースポーツ」と、そこに広がる「技術・工学の世界」</p>
+          <p class="lang-en">The “motorsports” we take on and the “world of technology and engineering” that unfolds within it</p>
         </div>
       </div>
 
-      <div style="margin-top: 60px;">
-        <h3 style="font-family: var(--font-en); font-size: 3rem; font-weight: 900; color: var(--green); margin-bottom: 24px;">WHY F<sup>RACING</sup></h3>
-        <div class="card-grid">
-          <div class="custom-card">
-            <h4 style="font-size: 1.8rem; font-weight: 900; color: var(--green);">Fusetsu（附設）</h4>
-            <p class="lang-jp" style="margin-top: 12px;">私たちの原点であり、共に学ぶ仲間が集う場所。</p>
-            <p class="lang-en" style="margin-top: 12px;">Our starting point where fellow students learn together.</p>
-          </div>
-          <div class="custom-card">
-            <h4 style="font-size: 1.8rem; font-weight: 900; color: var(--green);">Future（未来）</h4>
-            <p class="lang-jp" style="margin-top: 12px;">自らの手で主体的に切り拓いていく未来。</p>
-            <p class="lang-en" style="margin-top: 12px;">The future we carve out with our own hands.</p>
-          </div>
-          <div class="custom-card">
-            <h4 style="font-size: 1.8rem; font-weight: 900; color: var(--green);">Formula（フォーミュラ）</h4>
-            <p class="lang-jp" style="margin-top: 12px;">挑戦するモータースポーツと技術・工学の世界。</p>
-            <p class="lang-en" style="margin-top: 12px;">Motorsports and the world of engineering we challenge.</p>
-          </div>
-        </div>
+      <div class="lang-jp" style="margin-top: 48px; font-size: 1.2rem; max-width: 900px; margin-left: auto; margin-right: auto; padding: 32px; border: 2px solid var(--green); border-radius: 12px; background-color: #0A1410;">
+        <p style="font-size: 1.5rem; font-weight: bold; color: var(--green); margin-bottom: 16px; text-align: center;">「Racing」は、Fを無限に広げる指数</p>
+        <p>私たちは、この「F」に「Racing」を**指数（乗数）**として組み合わせました。</p>
+        <p style="margin-top: 16px;">私たちにとってレース活動は、単なる成果を表現する舞台ではありません。レースカーを自分たちの手で設計し、つくり、走らせ、仲間と限界に挑む。その一つひとつの経験が、私たちに新しい知識や価値観を与え、「F」の持つ意味をさらに何倍にも大きく、深く成長させていきます。</p>
+        <p style="margin-top: 16px;">「F」が表すものは、この3つだけに留まりません。これからの挑戦を通じて、私たちは新しい「F」の意味を自分たちで生み出し、加えていきます。</p>
+        <p style="margin-top: 16px; font-weight: bold; text-align: center;">Fusetsuから始まり、Futureへ向かい、Formulaに挑む。<br>そして、Racingを通じてそのすべてをブーストさせていく。<br>それが、私たちの「F<sup>RACING</sup>」です。</p>
+      </div>
+
+      <div class="lang-en" style="margin-top: 48px; font-size: 1.2rem; max-width: 900px; margin-left: auto; margin-right: auto; padding: 32px; border: 2px solid var(--green); border-radius: 12px; background-color: #0A1410;">
+        <p style="font-size: 1.5rem; font-weight: bold; color: var(--green); margin-bottom: 16px; text-align: center;">“Racing” is the exponent that expands “F” infinitely.</p>
+        <p>We have combined this “F” with “Racing” as an **exponent (multiplier)**.</p>
+        <p style="margin-top: 16px;">For us, racing is not merely a stage for showcasing results. We design, build, and drive our race cars with our own hands, pushing the limits alongside our teammates. Each of these experiences provides us with new knowledge and values, multiplying and deepening the meaning of “F” many times over.</p>
+        <p style="margin-top: 16px;">What “F” represents is not limited to just these three things. Through our future challenges, we will create and add new meanings to “F” on our own.</p>
+        <p style="margin-top: 16px; font-weight: bold; text-align: center;">Starting from Fusetsu, moving toward the Future, and taking on the Formula.<br>And through Racing, we will boost it all.<br>That is our “F<sup>RACING</sup>.”</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="logo" style="font-family: var(--font-en); font-weight: 900; font-size: 1.8rem;">F<sup>RACING</sup></div>
+    <div style="font-family: var(--font-en); font-weight: 900; font-size: 1.8rem;">F<sup>RACING</sup></div>
     <p>&copy; 2026 F<sup>RACING</sup> All Rights Reserved.</p>
   </footer>
   <script src="script.js"></script>
