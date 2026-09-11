@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONCEPT | F RACING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="jp">
+  <header>
+    <a href="index.html"><img src="whiteversion.jpg" alt="F RACING" class="logo-img"></a>
+    <div class="nav-container">
+      <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="concept.html" class="active">CONCEPT</a>
+        <a href="challenge.html">CHALLENGE & TECH</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="contact.html">CONTACT & SPONSOR</a>
+      </nav>
+      <div class="lang-switch">
+        <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button>
+        <span>/</span>
+        <button onclick="setLanguage('en')" id="btn-en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="dark-section">
+      <div class="section-title-box">
+        <span class="sub">OUR CONCEPT</span>
+        <h2>SPEED IS BUILT.</h2>
+      </div>
+      <div class="image-container">
+        <img src="Group38.png" alt="CONCEPT MAP">
+      </div>
+    </section>
+
+    <section>
+      <div class="card-grid">
+        <div class="custom-card mv-card">
+          <span class="sub" style="font-size: 1.8rem;">OUR MISSION</span>
+          <h3>CREATE VALUE FOR SOCIETY.</h3>
+          <p class="lang-jp" style="font-size: 1.1rem;">社会に新しい価値を創造し届ける使命。</p>
+          <p class="lang-en" style="font-size: 1.1rem;">Creating and delivering new value to society.</p>
+        </div>
+        <div class="custom-card mv-card">
+          <span class="sub" style="font-size: 1.8rem;">OUR VISION</span>
+          <h3>INSPIRE THE NEXT GENERATION.</h3>
+          <p class="lang-jp" style="font-size: 1.1rem;">次世代の挑戦者たちへインスピレーションを与える存在へ。</p>
+          <p class="lang-en" style="font-size: 1.1rem;">Inspiring the next generation of challengers.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo" style="font-family: var(--font-en); font-weight: 900; font-size: 1.8rem;">F<sup>RACING</sup></div>
+    <p>&copy; 2026 F<sup>RACING</sup> All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
