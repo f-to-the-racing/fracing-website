@@ -337,13 +337,14 @@ footer {
   margin-top: auto;
 }
 
-/* SNSボタン：ホバー時も白文字で統一 */
+/* SNSボタン（文字が見やすいように黒ベースに調整） */
 .sns-btn {
   display: inline-block;
   padding: 8px 20px;
   border: 1.5px solid var(--green);
   border-radius: 20px;
-  color: #ffffff;
+  color: #121212; /* 通常時の文字色を黒（ダークグレー）に変更 */
+  background-color: rgba(255, 255, 255, 0.9); /* ボタン自体の背景を白っぽくして視認性確保 */
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: bold;
@@ -351,9 +352,12 @@ footer {
 }
 
 .sns-btn:hover {
-  background-color: var(--green);
-  color: #ffffff;
+  background-color: var(--green); /* ホバー時にチームグリーンに変化 */
+  color: #ffffff; /* ホバー時は白文字 */
+  border-color: var(--green);
 }
+
+
 
 /* Inline Link Button */
 .inline-link-btn {
