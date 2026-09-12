@@ -171,7 +171,15 @@ section { padding: 80px var(--padding-x); border-bottom: 1px solid var(--light-g
 .image-container { width: 100%; max-width: 850px; margin: 32px auto; display: flex; justify-content: center; }
 .image-container img { width: 100%; height: auto; display: block; border-radius: 8px; border: 2px solid var(--green); }
 
-.member-insert-box { margin-top: 36px; padding: 32px; border: 2px dashed var(--green); border-radius: 10px; background-color: var(--light-green); text-align: center; }
+.member-insert-box {
+  margin-top: 36px;
+  padding: 20px;
+  border: 2px solid var(--green); /* 破線から実線に変更 */
+  border-radius: 10px;
+  background-color: var(--white); /* 写真が映える背景色に */
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
 
 /* FOOTER */
 footer {
