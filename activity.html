@@ -6,15 +6,16 @@
   <title>ACTIVITY | 全ての活動報告</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-lang="jp">
 
+  <!-- ヘッダー（既存CSSのナビゲーション構造と完全一致させています） -->
   <header>
-    <div class="header-container">
-      <div class="logo">
-        <a href="index.html">F RACING</a>
-      </div>
+    <div class="logo">
+      <a href="index.html">F RACING</a>
+    </div>
+    <div class="nav-container">
       <nav>
-        <ul>
+        <ul class="nav-links">
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT US</a></li>
           <li><a href="challenge.html">CHALLENGE</a></li>
@@ -23,57 +24,80 @@
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </nav>
+      <div class="lang-switch">
+        <button class="active">JP</button>
+        <button>EN</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <div class="container" style="padding: 40px 20px;">
-      <h1 style="font-size: 2rem; margin-bottom: 10px;">ACTIVITY ARCHIVE</h1>
-      <p style="margin-bottom: 30px; color: #666;">これまでの全ての活動記録です。</p>
+    <!-- ページタイトルセクション -->
+    <section>
+      <div class="section-title-box">
+        <span class="sub">ACTIVITY ARCHIVE</span>
+        <h2>活動報告一覧</h2>
+      </div>
 
-      <!-- 活動カードの一覧 -->
-      <div style="display: flex; flex-direction: column; gap: 30px;">
-        
+      <p class="hero-intro-text" style="margin-bottom: 40px;">
+        F RACINGのこれまでの活動記録・最新情報をご覧いただけます。
+      </p>
+
+      <!-- 活動カード一覧（既存CSSのcustom-cardデザインを活用） -->
+      <div class="card-grid">
+
         <!-- 記事 1 -->
-        <article style="display: flex; gap: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
-          <div style="width: 250px; flex-shrink: 0;">
-            <img src="images/activity1.jpg" alt="活動画像1" style="width: 100%; height: auto; border-radius: 4px;">
+        <article class="custom-card">
+          <div style="margin-bottom: 16px;">
+            <img src="images/activity1.jpg" alt="活動画像1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green);">
           </div>
-          <div>
-            <div style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">
-              <span>2026.03.10</span> / <span style="font-weight: bold; color: #333;">ENGINEERING</span>
-            </div>
-            <h2 style="font-size: 1.3rem; margin-bottom: 10px;">最新の活動タイトル1</h2>
-            <p style="color: #444; line-height: 1.6;">
-              ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
-            </p>
+          <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">
+            <span>2026.03.10</span> / <span class="accent-text">ENGINEERING</span>
           </div>
+          <h4>最新の活動タイトル1</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+            ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+          </p>
         </article>
 
         <!-- 記事 2 -->
-        <article style="display: flex; gap: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
-          <div style="width: 250px; flex-shrink: 0;">
-            <img src="images/activity2.jpg" alt="活動画像2" style="width: 100%; height: auto; border-radius: 4px;">
+        <article class="custom-card">
+          <div style="margin-bottom: 16px;">
+            <img src="images/activity2.jpg" alt="活動画像2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green);">
           </div>
-          <div>
-            <div style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">
-              <span>2026.03.01</span> / <span style="font-weight: bold; color: #333;">SPONSOR</span>
-            </div>
-            <h2 style="font-size: 1.3rem; margin-bottom: 10px;">最新の活動タイトル2</h2>
-            <p style="color: #444; line-height: 1.6;">
-              ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
-            </p>
+          <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">
+            <span>2026.03.01</span> / <span class="accent-text">SPONSOR</span>
           </div>
+          <h4>最新の活動タイトル2</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+            ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+          </p>
+        </article>
+
+        <!-- 記事 3 -->
+        <article class="custom-card">
+          <div style="margin-bottom: 16px;">
+            <img src="images/activity3.jpg" alt="活動画像3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green);">
+          </div>
+          <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">
+            <span>2026.02.20</span> / <span class="accent-text">EVENT</span>
+          </div>
+          <h4>最新の活動タイトル3</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+            ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+          </p>
         </article>
 
       </div>
 
-      <div style="margin-top: 40px; text-align: center;">
-        <a href="index.html" style="display: inline-block; padding: 10px 20px; border: 1px solid #333; color: #333; text-decoration: none;">HOMEへ戻る</a>
+      <!-- HOMEに戻るボタン -->
+      <div style="text-align: center; margin-top: 60px;">
+        <a href="index.html" class="btn-more">HOMEへ戻る</a>
       </div>
-    </div>
+    </section>
   </main>
 
+  <!-- フッター -->
   <footer>
     <p>&copy; 2026 F RACING. All Rights Reserved.</p>
   </footer>
