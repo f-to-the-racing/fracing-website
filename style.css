@@ -304,3 +304,36 @@ footer { background-color: var(--black); color: var(--white); padding: 40px var(
 .btn-more:hover {
   background-color: #444;
 }
+
+/* スマホ・タブレットでもメニューを表示させる設定 */
+@media (max-width: 991px) {
+  header {
+    height: auto;
+    padding: 10px 16px;
+    flex-direction: column; /* ロゴとメニューを上下に配置 */
+    gap: 8px;
+  }
+  
+  .nav-container {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* 画面幅に合わせて折り返し */
+  }
+
+  .nav-links {
+    display: flex !important; /* 非表示を解除 */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem; /* スマホ用に少し小さく調整 */
+    padding: 4px 8px;
+  }
+
+  main {
+    margin-top: 100px; /* ヘッダーの高さ変更に伴う調整 */
+  }
+}
+
