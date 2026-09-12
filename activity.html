@@ -2,146 +2,112 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACTIVITY | 全ての活動報告</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 共通ヘッダー -->
-  <header>...</header>
 
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html">F RACING</a>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="activity.html" class="active">ACTIVITY</a></li>
+          <li><a href="challenge.html">CHALLENGE</a></li>
+          <li><a href="sponsor.html">SPONSOR</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
   <main>
-    <section class="activity-archive">
-      <h1>ACTIVITY ARCHIVE</h1>
-      <p>これまでの全ての活動記録です。</p>
-      
-      <div class="activity-list">
-        <!-- 過去の全記事を並べる（カード型やリスト型など） -->
-        <article class="activity-item">
-          <span class="date">2026.03.10</span>
-          <span class="category">ENGINEERING</span>
-          <h3><a href="#">記事のタイトル</a></h3>
-        </article>
-        <!-- 記事をここに追加していく -->
+    <!-- ページ見出し -->
+    <section class="page-header">
+      <div class="container">
+        <h1>ACTIVITY</h1>
+        <p>これまでの全ての活動記録・最新情報</p>
+      </div>
+    </section>
+
+    <!-- 活動一覧リスト -->
+    <section class="activity-archive-section">
+      <div class="container">
+        <div class="activity-archive-list">
+          
+          <!-- 記事 1 -->
+          <article class="activity-archive-item">
+            <div class="activity-archive-img">
+              <img src="images/activity1.jpg" alt="活動画像1">
+            </div>
+            <div class="activity-archive-body">
+              <div class="activity-meta">
+                <span class="activity-date">2026.03.10</span>
+                <span class="activity-tag">ENGINEERING</span>
+              </div>
+              <h2 class="activity-archive-title"><a href="#">最新の活動タイトル1</a></h2>
+              <p class="activity-archive-desc">
+                ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+              </p>
+            </div>
+          </article>
+
+          <!-- 記事 2 -->
+          <article class="activity-archive-item">
+            <div class="activity-archive-img">
+              <img src="images/activity2.jpg" alt="活動画像2">
+            </div>
+            <div class="activity-archive-body">
+              <div class="activity-meta">
+                <span class="activity-date">2026.03.01</span>
+                <span class="activity-tag">SPONSOR</span>
+              </div>
+              <h2 class="activity-archive-title"><a href="#">最新の活動タイトル2</a></h2>
+              <p class="activity-archive-desc">
+                ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+              </p>
+            </div>
+          </article>
+
+          <!-- 記事 3 -->
+          <article class="activity-archive-item">
+            <div class="activity-archive-img">
+              <img src="images/activity3.jpg" alt="活動画像3">
+            </div>
+            <div class="activity-archive-body">
+              <div class="activity-meta">
+                <span class="activity-date">2026.02.20</span>
+                <span class="activity-tag">EVENT</span>
+              </div>
+              <h2 class="activity-archive-title"><a href="#">最新の活動タイトル3</a></h2>
+              <p class="activity-archive-desc">
+                ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="back-to-home">
+          <a href="index.html" class="btn-secondary">HOMEへ戻る</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- 共通フッター -->
-  <footer>...</footer>
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 F RACING. All Rights Reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
-/* ===================================
-   ACTIVITY 一覧ページ用スタイル
-   =================================== */
-.page-header {
-  background-color: #f4f4f4;
-  padding: 60px 0;
-  text-align: center;
-}
-
-.page-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.activity-archive-section {
-  padding: 60px 0;
-}
-
-.activity-archive-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.activity-archive-item {
-  display: flex;
-  gap: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 30px;
-}
-
-.activity-archive-img {
-  width: 30%;
-  flex-shrink: 0;
-}
-
-.activity-archive-img img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  object-fit: cover;
-}
-
-.activity-archive-body {
-  width: 70%;
-}
-
-.activity-meta {
-  display: flex;
-  gap: 15px;
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.activity-tag {
-  background-color: #111;
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 3px;
-  font-size: 0.8rem;
-}
-
-.activity-archive-title {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.activity-archive-title a {
-  color: #333;
-  text-decoration: none;
-}
-
-.activity-archive-title a:hover {
-  text-decoration: underline;
-}
-
-.activity-archive-desc {
-  color: #555;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-.back-to-home {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.btn-secondary {
-  display: inline-block;
-  padding: 10px 24px;
-  border: 1px solid #111;
-  color: #111;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #111;
-  color: #fff;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .activity-archive-item {
-    flex-direction: column;
-  }
-  .activity-archive-img,
-  .activity-archive-body {
-    width: 100%;
-  }
-}
