@@ -4,29 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACTIVITY | 全ての活動報告</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-lang="jp">
 
-  
   <header>
-  <a href="index.html"><img src="whiteversion.jpg" alt="F RACING" class="logo-img"></a>
-  <div class="nav-container">
-    <nav class="nav-links">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT US</a>
-      <a href="challenge.html">CHALLENGE</a>
-      <a href="challenge.html#engineering">ENGINEERING</a>
-      <a href="challenge.html#business">BUSINESS</a>
-      <a href="activity.html" class="active">ACTIVITY</a>
-      <a href="sponsor.html">SPONSOR</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-    <div class="lang-switch">
-      <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button><span>/</span><button onclick="setLanguage('en')" id="btn-en">EN</button>
+    <a href="index.html"><img src="whiteversion.jpg" alt="F RACING" class="logo-img"></a>
+    <div class="nav-container">
+      <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="challenge.html">CHALLENGE</a>
+        <a href="challenge.html#engineering">ENGINEERING</a>
+        <a href="challenge.html#business">BUSINESS</a>
+        <a href="activity.html" class="active">ACTIVITY</a>
+        <a href="sponsor.html">SPONSOR</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <div class="lang-switch">
+        <button id="btn-jp" class="active">JP</button><span>/</span><button id="btn-en">EN</button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <main>
     <!-- ページタイトルセクション -->
@@ -40,13 +40,13 @@
         F RACINGのこれまでの活動記録・最新情報をご覧いただけます。
       </p>
 
-      <!-- 活動カード一覧（既存CSSのcustom-cardデザインを活用） -->
+      <!-- 活動カード一覧 -->
       <div class="card-grid">
 
         <!-- 記事 1 -->
         <article class="custom-card">
           <div style="margin-bottom: 16px;">
-            <img src="whiteversion.jpg" alt="活動画像1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green);">
+            <img src="whiteversion.jpg" alt="活動画像1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green, #00ff00);">
           </div>
           <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">
             <span>2026.09.13</span> / <span class="accent-text">TEAM</span>
@@ -60,7 +60,7 @@
         <!-- 記事 2 -->
         <article class="custom-card">
           <div style="margin-bottom: 16px;">
-            <img src="whiteversion.jpg" alt="活動画像2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green);">
+            <img src="whiteversion.jpg" alt="活動画像2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green, #00ff00);">
           </div>
           <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">
             <span>2026.07.20</span> / <span class="accent-text">TEAM</span>
@@ -74,7 +74,7 @@
         <!-- 記事 3 -->
         <article class="custom-card">
           <div style="margin-bottom: 16px;">
-            <img src="images/activity3.jpg" alt="活動画像3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green);">
+            <img src="images/activity3.jpg" alt="活動画像3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px; border: 1px solid var(--green, #00ff00);">
           </div>
           <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px;">
             <span>2026.02.20</span> / <span class="accent-text">EVENT</span>
@@ -95,7 +95,7 @@
   </main>
 
   <!-- フッター -->
- <footer>
+  <footer>
     <div class="footer-logo">
       <a href="index.html">
         <img src="blackversion.png" alt="F RACING" class="logo-img">
@@ -104,7 +104,7 @@
     <p>&copy; 2026 F RACING. All Rights Reserved.</p>
   </footer>
 
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const langButtons = document.querySelectorAll('.lang-switch button');
       const savedLang = localStorage.getItem('selectedLang') || 'jp';
@@ -112,7 +112,7 @@
 
       langButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-          const lang = btn.textContent.trim().toLowerCase();
+          const lang = btn.id === 'btn-en' ? 'en' : 'jp';
           localStorage.setItem('selectedLang', lang);
           applyLanguage(lang);
         });
@@ -121,7 +121,7 @@
       function applyLanguage(lang) {
         document.body.setAttribute('data-lang', lang);
         langButtons.forEach(btn => {
-          if (btn.textContent.trim().toLowerCase() === lang) {
+          if ((btn.id === 'btn-jp' && lang === 'jp') || (btn.id === 'btn-en' && lang === 'en')) {
             btn.classList.add('active');
           } else {
             btn.classList.remove('active');
@@ -130,8 +130,5 @@
       }
     });
   </script>
-  <!-- ★ここまで貼り付け★ -->
-
 </body>
 </html>
-  
