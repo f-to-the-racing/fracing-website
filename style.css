@@ -337,3 +337,15 @@ footer { background-color: var(--black); color: var(--white); padding: 40px var(
   }
 }
 
+/* ヘッダーナビゲーションのスタイル強制統一 */
+header .nav-links a {
+  font-size: 0.85rem !important;
+  letter-spacing: normal !important;
+  padding: 8px 12px !important;
+  margin: 0 !important;
+  display: inline-block !important;
+}
+
+header .nav-container {
+  gap: 16px !important;
+}
