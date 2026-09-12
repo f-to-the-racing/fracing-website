@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACTIVITY | 全ての活動報告</title>
+  <!-- CSSのファイルパスが他ページと合っているか確認してください -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ヘッダー -->
-  <header class="header">
-    <div class="container header-inner">
+  <!-- 他のページ（about.htmlなど）からヘッダーのHTMLをそのままコピーしてここに貼り付けてください -->
+  <header>
+    <div class="header-container">
       <div class="logo">
         <a href="index.html">F RACING</a>
       </div>
-      <nav class="nav-menu">
+      <nav>
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT US</a></li>
@@ -27,86 +28,57 @@
     </div>
   </header>
 
-  <!-- メインコンテンツ -->
   <main>
-    <!-- ページ見出し -->
-    <section class="page-header">
-      <div class="container">
-        <h1>ACTIVITY</h1>
-        <p>これまでの全ての活動記録・最新情報</p>
+    <div class="container" style="padding: 40px 20px;">
+      <h1 style="font-size: 2rem; margin-bottom: 10px;">ACTIVITY ARCHIVE</h1>
+      <p style="margin-bottom: 30px; color: #666;">これまでの全ての活動記録です。</p>
+
+      <!-- 活動カードの一覧 -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        
+        <!-- 記事 1 -->
+        <article style="display: flex; gap: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
+          <div style="width: 250px; flex-shrink: 0;">
+            <img src="images/activity1.jpg" alt="活動画像1" style="width: 100%; height: auto; border-radius: 4px;">
+          </div>
+          <div>
+            <div style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">
+              <span>2026.03.10</span> / <span style="font-weight: bold; color: #333;">ENGINEERING</span>
+            </div>
+            <h2 style="font-size: 1.3rem; margin-bottom: 10px;">最新の活動タイトル1</h2>
+            <p style="color: #444; line-height: 1.6;">
+              ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+            </p>
+          </div>
+        </article>
+
+        <!-- 記事 2 -->
+        <article style="display: flex; gap: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
+          <div style="width: 250px; flex-shrink: 0;">
+            <img src="images/activity2.jpg" alt="活動画像2" style="width: 100%; height: auto; border-radius: 4px;">
+          </div>
+          <div>
+            <div style="font-size: 0.85rem; color: #666; margin-bottom: 5px;">
+              <span>2026.03.01</span> / <span style="font-weight: bold; color: #333;">SPONSOR</span>
+            </div>
+            <h2 style="font-size: 1.3rem; margin-bottom: 10px;">最新の活動タイトル2</h2>
+            <p style="color: #444; line-height: 1.6;">
+              ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
+            </p>
+          </div>
+        </article>
+
       </div>
-    </section>
 
-    <!-- 活動一覧リスト -->
-    <section class="activity-archive-section">
-      <div class="container">
-        <div class="activity-archive-list">
-          
-          <!-- 記事 1 -->
-          <article class="activity-archive-item">
-            <div class="activity-archive-img">
-              <img src="images/activity1.jpg" alt="活動画像1">
-            </div>
-            <div class="activity-archive-body">
-              <div class="activity-meta">
-                <span class="activity-date">2026.03.10</span>
-                <span class="activity-tag">ENGINEERING</span>
-              </div>
-              <h2 class="activity-archive-title"><a href="#">最新の活動タイトル1</a></h2>
-              <p class="activity-archive-desc">
-                ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
-              </p>
-            </div>
-          </article>
-
-          <!-- 記事 2 -->
-          <article class="activity-archive-item">
-            <div class="activity-archive-img">
-              <img src="images/activity2.jpg" alt="活動画像2">
-            </div>
-            <div class="activity-archive-body">
-              <div class="activity-meta">
-                <span class="activity-date">2026.03.01</span>
-                <span class="activity-tag">SPONSOR</span>
-              </div>
-              <h2 class="activity-archive-title"><a href="#">最新の活動タイトル2</a></h2>
-              <p class="activity-archive-desc">
-                ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
-              </p>
-            </div>
-          </article>
-
-          <!-- 記事 3 -->
-          <article class="activity-archive-item">
-            <div class="activity-archive-img">
-              <img src="images/activity3.jpg" alt="活動画像3">
-            </div>
-            <div class="activity-archive-body">
-              <div class="activity-meta">
-                <span class="activity-date">2026.02.20</span>
-                <span class="activity-tag">EVENT</span>
-              </div>
-              <h2 class="activity-archive-title"><a href="#">最新の活動タイトル3</a></h2>
-              <p class="activity-archive-desc">
-                ここに活動報告の詳細や概要テキストが入ります。どのような作業を行ったか、成果や進捗についての説明を記載します。
-              </p>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="back-to-home">
-          <a href="index.html" class="btn-secondary">HOMEへ戻る</a>
-        </div>
+      <div style="margin-top: 40px; text-align: center;">
+        <a href="index.html" style="display: inline-block; padding: 10px 20px; border: 1px solid #333; color: #333; text-decoration: none;">HOMEへ戻る</a>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- フッター -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 F RACING. All Rights Reserved.</p>
-    </div>
+  <!-- 他のページからフッターのHTMLをそのままコピーしてここに貼り付けてください -->
+  <footer>
+    <p>&copy; 2026 F RACING. All Rights Reserved.</p>
   </footer>
 
 </body>
