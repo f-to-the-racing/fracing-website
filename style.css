@@ -3,8 +3,8 @@
   --black: #0A0A0A;
   --text-main: #121212;
   --dark-bg: #0A1410;
-  --green: #33855D; /* チームのメインカラー */
-  --green-dark: #245e42;
+  --green: #33855D; /* F RACING メインブランドカラー */
+  --green-dark: #245E42;
   --light-green: #E6F5F0;
   --font-en: 'Inter', sans-serif;
   --font-jp: 'Noto Sans JP', sans-serif;
@@ -69,7 +69,7 @@ header {
 
 .nav-links a:hover, .nav-links a.active {
   background-color: var(--green);
-  color: var(--black);
+  color: var(--white);
 }
 
 .lang-switch {
@@ -83,7 +83,7 @@ header {
   font-weight: inherit; color: var(--black);
   padding: 2px 6px; border-radius: 2px;
 }
-.lang-switch button.active { background-color: var(--green); color: var(--black); }
+.lang-switch button.active { background-color: var(--green); color: var(--white); }
 
 /* MAIN LAYOUT */
 main { margin-top: 80px; min-height: calc(100vh - 160px); }
@@ -128,12 +128,12 @@ section { padding: 80px var(--padding-x); border-bottom: 1px solid var(--light-g
   color: var(--green-dark); margin: 12px 0 16px 0;
 }
 
-.accent-text { color: var(--green-dark); font-weight: bold; }
+.accent-text { color: var(--green); font-weight: bold; }
 
 /* BUTTONS */
 .btn-more {
   display: inline-block; padding: 12px 32px;
-  background-color: var(--green); color: var(--black);
+  background-color: var(--green); color: var(--white);
   font-family: var(--font-en); font-weight: 900; font-size: 0.95rem;
   border-radius: 6px; transition: background-color 0.2s, transform 0.2s; text-align: center;
 }
@@ -149,12 +149,12 @@ section { padding: 80px var(--padding-x); border-bottom: 1px solid var(--light-g
 .custom-card {
   border: 2px solid var(--green); border-radius: 10px;
   padding: 28px; background-color: var(--white);
-  box-shadow: 0 8px 24px rgba(0, 168, 107, 0.06);
+  box-shadow: 0 8px 24px rgba(51, 133, 93, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
   height: 100%; display: flex; flex-direction: column;
 }
 .custom-card:hover {
-  transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0, 168, 107, 0.15);
+  transform: translateY(-4px); box-shadow: 0 12px 32px rgba(51, 133, 93, 0.2);
 }
 .custom-card h4 {
   font-family: var(--font-en);
@@ -181,7 +181,7 @@ footer {
   border-top: 4px solid var(--green);
 }
 
-/* RESPONSIVE (スマホ・タブレット表示最適化) */
+/* RESPONSIVE */
 @media (max-width: 991px) {
   :root { --padding-x: 5vw; }
   header {
@@ -218,7 +218,7 @@ footer {
 }
 
 /* ==========================================
-   ACTIVITY SECTION (デザイン完全適用版)
+   ACTIVITY SECTION (#33855D 統一版)
    ========================================== */
 
 .activity-section {
@@ -245,7 +245,7 @@ footer {
 
 .activity-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0, 255, 102, 0.35);
+  box-shadow: 0 0 20px rgba(51, 133, 93, 0.4);
 }
 
 .activity-card-link {
@@ -256,7 +256,7 @@ footer {
   color: inherit;
 }
 
-/* 写真のサイズを縦幅140pxに小さく制限 */
+/* 写真サイズ140px制限 */
 .activity-img {
   position: relative;
   width: 100%;
@@ -277,13 +277,13 @@ footer {
   transform: scale(1.08);
 }
 
-/* 緑色のカテゴリタグ */
+/* カテゴリタグ：白文字に変更して視認性を確保 */
 .activity-tag {
   position: absolute;
   top: 10px;
   right: 10px;
   background: var(--green);
-  color: #000;
+  color: #FFFFFF;
   font-family: var(--font-en);
   font-weight: 900;
   font-size: 0.75rem;
@@ -337,7 +337,7 @@ footer {
   margin-top: auto;
 }
 
-/* SNSボタンデザイン */
+/* SNSボタン：ホバー時も白文字で統一 */
 .sns-btn {
   display: inline-block;
   padding: 8px 20px;
@@ -352,7 +352,7 @@ footer {
 
 .sns-btn:hover {
   background-color: var(--green);
-  color: #000000;
+  color: #ffffff;
 }
 
 /* Inline Link Button */
