@@ -10,30 +10,23 @@
 
   <!-- ヘッダー（既存CSSのナビゲーション構造と完全一致させています） -->
   <header>
-    <div class="logo">
-     <a href="index.html">
-     <img src="whiteversion.jpg" alt="F RACING" class="logo-img">
-    </a>
-   </div>
-    <div class="nav-container">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT US</a></li>
-          <li><a href="challenge.html">CHALLENGE</a></li>
-          <a href="challenge.html#engineering">ENGINEERING</a>
-          <a href="challenge.html#business">BUSINESS</a>
-          <li><a href="activity.html" class="active">ACTIVITY</a></li>
-          <li><a href="sponsor.html">SPONSOR</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-      </nav>
-      <div class="lang-switch">
-        <button class="active">JP</button>
-        <button>EN</button>
-      </div>
+  <a href="index.html"><img src="whiteversion.jpg" alt="F RACING" class="logo-img"></a>
+  <div class="nav-container">
+    <nav class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="challenge.html">CHALLENGE</a>
+      <a href="challenge.html#engineering">ENGINEERING</a>
+      <a href="challenge.html#business">BUSINESS</a>
+      <a href="activity.html" class="active">ACTIVITY</a>
+      <a href="sponsor.html">SPONSOR</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="lang-switch">
+      <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button><span>/</span><button onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <!-- ページタイトルセクション -->
