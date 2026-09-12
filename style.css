@@ -283,3 +283,24 @@ footer { background-color: var(--black); color: var(--white); padding: 40px var(
   .mv-card h3 { font-size: 1.8rem; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
 }
+
+/* ACTIVITYセクション用追加スタイル */
+.activity-btn-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-more {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #111; /* ブランドカラーに合わせて変更してください */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-more:hover {
+  background-color: #444;
+}
