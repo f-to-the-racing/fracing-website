@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-lang="jp">
+  <!-- ヘッダー -->
   <header>
     <a href="index.html"><img src="whiteversion.jpg" alt="F RACING" class="logo-img"></a>
     <div class="nav-container">
@@ -22,159 +23,156 @@
         <a href="contact.html">CONTACT</a>
       </nav>
       <div class="lang-switch">
-        <button onclick="setLanguage('jp')" id="btn-jp" class="active">JP</button><span>/</span><button onclick="setLanguage('en')" id="btn-en">EN</button>
+        <button id="btn-jp" class="active">JP</button><span>/</span><button id="btn-en">EN</button>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- ヒーローセクション -->
     <section class="dark-section" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh;">
       <div class="hero-tag">FUKUOKA’s FIRST STEM Racing TEAM</div>
-      <h1 style="font-family: var(--font-en); font-size: clamp(3rem, 6vw, 6rem); font-weight: 900; line-height: 1.0; margin-bottom: 16px;">SPEED IS BUILT.</h1>
-      <p class="lang-jp" style="font-size: 1.1rem; margin-bottom: 32px; color: var(--light-green);">速さは、築き上げるもの。</p>
-      <p class="lang-en" style="font-size: 1.1rem; margin-bottom: 32px; color: var(--light-green);">Speed is built.</p>
+      <h1 style="font-family: var(--font-en, 'Inter'); font-size: clamp(3rem, 6vw, 6rem); font-weight: 900; line-height: 1.0; margin-bottom: 16px;">SPEED IS BUILT.</h1>
+      <p class="lang-jp" style="font-size: 1.1rem; margin-bottom: 32px; color: var(--green, #00ff00);">速さは、築き上げるもの。</p>
+      <p class="lang-en" style="font-size: 1.1rem; margin-bottom: 32px; color: var(--green, #00ff00);">Speed is built.</p>
       <div class="image-container" style="margin: 0;">
         <img src="whiteversion.jpg" alt="メインビジュアル">
       </div>
     </section>
 
+    <!-- 紹介＆各ページへの導線 -->
     <section id="intro">
       <div style="margin-bottom: 32px;">
-        <h2 style="font-family: var(--font-en); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900;">We Are F<sup>RACING</sup></h2>
+        <h2 style="font-family: var(--font-en, 'Inter'); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900;">We Are F<sup>RACING</sup></h2>
         <p class="lang-jp accent-text">STEM Racing Team from Fusetsu</p>
         <p class="lang-en accent-text">STEM Racing Team from Fusetsu</p>
       </div>
+
+      <!-- ABOUT US 導線 -->
       <div class="custom-card" style="margin-bottom: 24px;">
-      <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 16px;">
-        久留米大学附設高等学校の高校生で構成された、<br>
-        福岡県で初のSTEM Racing に挑戦するチームです。<br>
-        Engineering, Business, Marketingなど、<br>
-        それぞれの分野の力を組み合わせて一台のマシン、そして一つのチームをつくっています。
-      </p>
-      <a href="about.html" class="inline-link-btn">→ ABOUT US</a>
-    </div>
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 16px;">
+          久留米大学附設高等学校の高校生で構成された、<br>
+          福岡県で初のSTEM Racing に挑戦するチームです。<br>
+          Engineering, Business, Marketingなど、<br>
+          それぞれの分野の力を組み合わせて一台のマシン、そして一つのチームをつくっています。
+        </p>
+        <a href="about.html" class="inline-link-btn">→ ABOUT US</a>
+      </div>
 
-    <!-- OUR CONCEPT（ABOUTページのコンセプト部分へ直接ジャンプ） -->
-    <div class="custom-card" style="margin-bottom: 24px;">
-      <span class="sub" style="color: var(--green, #00ff00); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">OUR CONCEPT</span>
-      <h3 style="font-size: 1.5rem; font-weight: 900; margin: 8px 0 16px 0;">SPEED IS BUILT.</h3>
-      <p style="line-height: 1.8; margin-bottom: 16px;">
-        速さは、一つの要素から生まれるものではない。<br>
-        Engineering、Teamwork、Marketing、Sponsorship——<br>
-        すべての積み重ねが、最後の「速さ」になる。
-      </p>
-      <a href="about.html#concept" class="inline-link-btn">→ OUR CONCEPT</a>
-    </div>
+      <!-- OUR CONCEPT 導線 -->
+      <div class="custom-card" style="margin-bottom: 24px;">
+        <span class="sub" style="color: var(--green, #00ff00); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">OUR CONCEPT</span>
+        <h3 style="font-size: 1.5rem; font-weight: 900; margin: 8px 0 16px 0;">SPEED IS BUILT.</h3>
+        <p style="line-height: 1.8; margin-bottom: 16px;">
+          速さは、一つの要素から生まれるものではない。<br>
+          Engineering、Teamwork、Marketing、Sponsorship——<br>
+          すべての積み重ねが、最後の「速さ」になる。
+        </p>
+        <a href="about.html#concept" class="inline-link-btn">→ OUR CONCEPT</a>
+      </div>
 
-    <!-- OUR CHALLENGE -->
-    <div class="custom-card" style="margin-bottom: 24px;">
-      <span class="sub" style="color: var(--green, #00ff00); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">OUR CHALLENGE</span>
-      <h3 style="font-size: 1.5rem; font-weight: 900; margin: 8px 0 12px 0;">STEM Racing</h3>
-      <p style="line-height: 1.8; margin-bottom: 16px;">
-        EngineeringとBusinessの両面から、レーシングカーの開発に挑戦する国際的なSTEM教育プログラム。
-      </p>
-      <a href="challenge.html" class="inline-link-btn">→ OUR CHALLENGE</a>
-    </div>
+      <!-- OUR CHALLENGE 導線 -->
+      <div class="custom-card" style="margin-bottom: 24px;">
+        <span class="sub" style="color: var(--green, #00ff00); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">OUR CHALLENGE</span>
+        <h3 style="font-size: 1.5rem; font-weight: 900; margin: 8px 0 12px 0;">STEM Racing</h3>
+        <p style="line-height: 1.8; margin-bottom: 16px;">
+          EngineeringとBusinessの両面から、レーシングカーの開発に挑戦する国際的なSTEM教育プログラム。
+        </p>
+        <a href="challenge.html" class="inline-link-btn">→ OUR CHALLENGE</a>
+      </div>
     </section>
 
-<section id="activity" class="activity-section">
-  <div class="container">
-    <div class="section-title-box">
-      <span class="sub">LATEST ACTIVITY</span>
-      <h2>最新の活動報告</h2>
-    </div>
+    <!-- ACTIVITY セクション（デザイン刷新版） -->
+    <section id="activity" class="activity-section">
+      <div class="container">
+        <div class="section-title-box">
+          <span class="sub">LATEST ACTIVITY</span>
+          <h2>最新の活動報告</h2>
+        </div>
 
-    <div class="activity-grid">
-      <!-- 1件目（最新） -->
-      <article class="activity-card">
-        <a href="activity.html" class="activity-card-link">
-          <div class="activity-img">
-            <img src="whiteversion.jpg" alt="HP公開の画像">
-            <span class="activity-tag">TEAM</span>
-          </div>
-          <div class="activity-content">
-            <div class="activity-meta">
-              <span class="activity-date">2026.09.13</span>
-            </div>
-            <h3 class="activity-title">HPを公開しました！</h3>
-            <p class="activity-desc">F RACINGの公式ウェブサイトを開設いたしました。今後の活動情報やチームの挑戦を順次発信していきます。</p>
-            <span class="activity-more">READ MORE <span class="arrow">→</span></span>
-          </div>
-        </a>
-      </article>
+        <div class="activity-grid">
+          <!-- 1件目 -->
+          <article class="activity-card">
+            <a href="activity.html" class="activity-card-link">
+              <div class="activity-img">
+                <img src="whiteversion.jpg" alt="HP公開の画像">
+                <span class="activity-tag">TEAM</span>
+              </div>
+              <div class="activity-content">
+                <span class="activity-date">2026.09.13</span>
+                <h3 class="activity-title">HPを公開しました！</h3>
+                <p class="activity-desc">F RACINGの公式ウェブサイトを開設いたしました。今後の活動情報やチームの挑戦を順次発信していきます。</p>
+                <span class="activity-more">READ MORE <span class="arrow">→</span></span>
+              </div>
+            </a>
+          </article>
 
-      <!-- 2件目 -->
-      <article class="activity-card">
-        <a href="activity.html" class="activity-card-link">
-          <div class="activity-img">
-            <img src="whiteversion.jpg" alt="チーム結成の画像">
-            <span class="activity-tag">TEAM</span>
-          </div>
-          <div class="activity-content">
-            <div class="activity-meta">
-              <span class="activity-date">2026.07.20</span>
-            </div>
-            <h3 class="activity-title">チームを結成しました！</h3>
-            <p class="activity-desc">久留米大学附設高等学校のメンバーを中心に、福岡初のSTEM Racingチームを結成しました。</p>
-            <span class="activity-more">READ MORE <span class="arrow">→</span></span>
-          </div>
-        </a>
-      </article>
+          <!-- 2件目 -->
+          <article class="activity-card">
+            <a href="activity.html" class="activity-card-link">
+              <div class="activity-img">
+                <img src="whiteversion.jpg" alt="チーム結成の画像">
+                <span class="activity-tag">TEAM</span>
+              </div>
+              <div class="activity-content">
+                <span class="activity-date">2026.07.20</span>
+                <h3 class="activity-title">チームを結成しました！</h3>
+                <p class="activity-desc">久留米大学附設高等学校のメンバーを中心に、福岡初のSTEM Racingチームを結成しました。</p>
+                <span class="activity-more">READ MORE <span class="arrow">→</span></span>
+              </div>
+            </a>
+          </article>
 
-      <!-- 3件目 -->
-      <article class="activity-card">
-        <a href="activity.html" class="activity-card-link">
-          <div class="activity-img">
-            <img src="images/activity3.jpg" alt="活動画像3">
-            <span class="activity-tag">EVENT</span>
-          </div>
-          <div class="activity-content">
-            <div class="activity-meta">
-              <span class="activity-date">2026.02.20</span>
-            </div>
-            <h3 class="activity-title">最新の活動タイトル3</h3>
-            <p class="activity-desc">ここに記事の簡単な概要テキストが入ります。どのような作業を行ったか、成果についての説明を記載します。</p>
-            <span class="activity-more">READ MORE <span class="arrow">→</span></span>
-          </div>
-        </a>
-      </article>
-    </div>
+          <!-- 3件目 -->
+          <article class="activity-card">
+            <a href="activity.html" class="activity-card-link">
+              <div class="activity-img">
+                <img src="images/activity3.jpg" alt="活動画像3">
+                <span class="activity-tag">EVENT</span>
+              </div>
+              <div class="activity-content">
+                <span class="activity-date">2026.02.20</span>
+                <h3 class="activity-title">最新の活動タイトル3</h3>
+                <p class="activity-desc">ここに記事の簡単な概要テキストが入ります。どのような作業を行ったかについての説明を記載します。</p>
+                <span class="activity-more">READ MORE <span class="arrow">→</span></span>
+              </div>
+            </a>
+          </article>
+        </div>
 
-    <!-- 一覧へ飛ぶボタン -->
-    <div style="text-align: center; margin-top: 48px;">
-      <a href="activity.html" class="btn-more">活動報告一覧を見る (VIEW ALL)</a>
-    </div>
-  </div>
-</section>
-
-    <section id="activity" class="contact introduction">
-    <div class="custom-card" style="margin-top: 40px; text-align: center; border: 1px solid var(--green, #00ff00);">
-      <span class="sub" style="color: var(--green, #00ff00); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">GET IN TOUCH</span>
-      <h3 style="font-size: 1.5rem; font-weight: 900; margin: 8px 0 16px 0;">CONTACT & SNS</h3>
-      <p style="line-height: 1.8; margin-bottom: 24px;">
-        取材のお申し込み、ご協賛・スポンサーに関するご相談、その他お問い合わせはこちらからお願いいたします。<br>
-        公式SNSでも最新情報を発信中です！
-      </p>
-
-      <!-- CONTACTページへのボタン -->
-      <div style="margin-bottom: 32px;">
-        <a href="contact.html" class="btn-more">お問い合わせはこちら (CONTACT)</a>
-      </div>
-
-      <!-- SNSリンク一覧（アイコンやリンクボタン） -->
-      <div class="sns-links-container">
-        <span style="font-weight: bold; font-size: 0.9rem; display: block; margin-bottom: 12px; color: #aaa;">OFFICIAL SNS</span>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="https://www.instagram.com/f_to_the_racing/?hl=ja" target="_blank" rel="noopener noreferrer" class="sns-btn">Instagram</a>
-          <a href="https://x.com/FtotheRacing" target="_blank" rel="noopener noreferrer" class="sns-btn">X (Twitter)</a>
-          <a href="https://www.youtube.com/channel/UCRHW-2N_GnkMYaxLG4QGpog" target="_blank" rel="noopener noreferrer" class="sns-btn">YouTube</a>
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="activity.html" class="btn-more">活動報告一覧を見る (VIEW ALL)</a>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- CONTACT & SNS セクション -->
+    <section id="contact-section">
+      <div class="custom-card" style="margin-top: 40px; text-align: center; border: 1px solid var(--green, #00ff00);">
+        <span class="sub" style="color: var(--green, #00ff00); font-weight: bold; font-size: 0.85rem; letter-spacing: 1px;">GET IN TOUCH</span>
+        <h3 style="font-size: 1.5rem; font-weight: 900; margin: 8px 0 16px 0;">CONTACT & SNS</h3>
+        <p style="line-height: 1.8; margin-bottom: 24px;">
+          取材のお申し込み、ご協賛・スポンサーに関するご相談、その他お問い合わせはこちらからお願いいたします。<br>
+          公式SNSでも最新情報を発信中です！
+        </p>
+
+        <div style="margin-bottom: 32px;">
+          <a href="contact.html" class="btn-more">お問い合わせはこちら (CONTACT)</a>
+        </div>
+
+        <div class="sns-links-container">
+          <span style="font-weight: bold; font-size: 0.9rem; display: block; margin-bottom: 12px; color: #aaa;">OFFICIAL SNS</span>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://www.instagram.com/f_to_the_racing/?hl=ja" target="_blank" rel="noopener noreferrer" class="sns-btn">Instagram</a>
+            <a href="https://x.com/FtotheRacing" target="_blank" rel="noopener noreferrer" class="sns-btn">X (Twitter)</a>
+            <a href="https://www.youtube.com/channel/UCRHW-2N_GnkMYaxLG4QGpog" target="_blank" rel="noopener noreferrer" class="sns-btn">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- フッター -->
   <footer>
     <div class="footer-logo">
       <a href="index.html">
@@ -183,7 +181,8 @@
     </div>
     <p>&copy; 2026 F RACING. All Rights Reserved.</p>
   </footer>
-<script>
+
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const langButtons = document.querySelectorAll('.lang-switch button');
       const savedLang = localStorage.getItem('selectedLang') || 'jp';
@@ -209,8 +208,5 @@
       }
     });
   </script>
-  <!-- ★ここまで貼り付け★ -->
-
 </body>
 </html>
-  
