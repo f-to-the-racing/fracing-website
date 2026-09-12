@@ -113,3 +113,35 @@
     </div>
     <p>&copy; 2026 F RACING. All Rights Reserved.</p>
   </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const langButtons = document.querySelectorAll('.lang-switch button');
+      const savedLang = localStorage.getItem('selectedLang') || 'jp';
+      applyLanguage(savedLang);
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.textContent.trim().toLowerCase();
+          localStorage.setItem('selectedLang', lang);
+          applyLanguage(lang);
+        });
+      });
+
+      function applyLanguage(lang) {
+        document.body.setAttribute('data-lang', lang);
+        langButtons.forEach(btn => {
+          if (btn.textContent.trim().toLowerCase() === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+    });
+  </script>
+  <!-- ★ここまで貼り付け★ -->
+
+</body>
+</html>
+  
