@@ -3,8 +3,8 @@
   --black: #0A0A0A;
   --text-main: #121212;
   --dark-bg: #0A1410;
-  --green: #00A86B;
-  --green-dark: #007A4D;
+  --green: #00FF66; /* 鮮やかなレーシンググリーン */
+  --green-dark: #00B347;
   --light-green: #E6F5F0;
   --font-en: 'Inter', sans-serif;
   --font-jp: 'Noto Sans JP', sans-serif;
@@ -69,7 +69,7 @@ header {
 
 .nav-links a:hover, .nav-links a.active {
   background-color: var(--green);
-  color: var(--white);
+  color: var(--black);
 }
 
 .lang-switch {
@@ -83,7 +83,7 @@ header {
   font-weight: inherit; color: var(--black);
   padding: 2px 6px; border-radius: 2px;
 }
-.lang-switch button.active { background-color: var(--green); color: var(--white); }
+.lang-switch button.active { background-color: var(--green); color: var(--black); }
 
 /* MAIN LAYOUT */
 main { margin-top: 80px; min-height: calc(100vh - 160px); }
@@ -133,11 +133,11 @@ section { padding: 80px var(--padding-x); border-bottom: 1px solid var(--light-g
 /* BUTTONS */
 .btn-more {
   display: inline-block; padding: 12px 32px;
-  background-color: var(--green); color: var(--white);
-  font-family: var(--font-en); font-weight: 700; font-size: 0.95rem;
-  border-radius: 6px; transition: background-color 0.2s; text-align: center;
+  background-color: var(--green); color: var(--black);
+  font-family: var(--font-en); font-weight: 900; font-size: 0.95rem;
+  border-radius: 6px; transition: background-color 0.2s, transform 0.2s; text-align: center;
 }
-.btn-more:hover { background-color: var(--green-dark); color: var(--white); }
+.btn-more:hover { background-color: var(--green-dark); color: var(--white); transform: translateY(-2px); }
 
 .activity-btn-wrapper { text-align: center; margin-top: 40px; }
 
@@ -218,14 +218,14 @@ footer {
 }
 
 /* ==========================================
-   ACTIVITY SECTION (緑フレーム＆コンパクト画像版)
+   ACTIVITY SECTION (デザイン完全適用版)
    ========================================== */
 
 .activity-section {
   padding: 60px 0;
+  background-color: var(--dark-bg);
 }
 
-/* 3列並び（スマホでは自動で1列） */
 .activity-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,148 +233,10 @@ footer {
   margin-top: 36px;
 }
 
-/* カード本体：緑の繊細な枠線と角のアクセント */
+/* カード本体 */
 .activity-card {
-  background-color: rgba(10, 15, 12, 0.8);
-  border: 1px solid rgba(0, 255, 0, 0.3); /* 常時うっすら緑の枠線 */
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-/* ホバー時：ネオンのように全体が緑に光る */
-.activity-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--green, #00ff00);
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.25), inset 0 0 10px rgba(0, 255, 0, 0.1);
-}
-
-/* リンク全体 */
-.activity-card-link {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
-}
-
-/* 画像エリア：高さを小さく抑えました（大きすぎないサイズ） */
-.activity-img {
-  position: relative;
-  width: 100%;
-  height: 140px; /* ★大きすぎた高さをスリム化 */
-  overflow: hidden;
-  background-color: #000;
-  border-bottom: 1px solid rgba(0, 255, 0, 0.2); /* 画像の下にも緑のセパレート線 */
-}
-
-.activity-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-  opacity: 0.9;
-}
-
-/* ホバー時の程よいズーム */
-.activity-card:hover .activity-img img {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
-/* カテゴリタグ：緑のボックスでクッキリ表示 */
-.activity-tag {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--green, #00ff00);
-  color: #000; /* 黒文字でメリハリ */
-  font-family: var(--font-en, sans-serif);
-  font-size: 0.7rem;
-  font-weight: 900;
-  padding: 3px 8px;
-  border-radius: 3px;
-  letter-spacing: 1px;
-}
-
-/* 文章エリア */
-.activity-content {
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-/* 日付 */
-.activity-date {
-  font-family: var(--font-en, sans-serif);
-  font-size: 0.8rem;
-  color: #888;
-}
-
-/* タイトル */
-.activity-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 6px 0 10px 0;
-  line-height: 1.4;
-  transition: color 0.2s ease;
-}
-
-.activity-card:hover .activity-title {
-  color: var(--green, #00ff00);
-}
-
-/* 概要テキスト */
-.activity-desc {
-  font-size: 0.85rem;
-  color: #bbb;
-  line-height: 1.5;
-  margin-bottom: 16px;
-  flex-grow: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* ★概要も2行に抑えてコンパクトに */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* MOREリンク */
-.activity-more {
-  font-family: var(--font-en, sans-serif);
-  font-size: 0.8rem;
-  font-weight: 900;
-  color: var(--green, #00ff00);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.activity-card:hover .activity-more .arrow {
-  transform: translateX(5px);
-}
-
-/* ==========================================
-   ACTIVITY SECTION (緑ネオンフレーム＆スリム画像)
-   ========================================== */
-
-.activity-section {
-  padding: 40px 0;
-}
-
-/* 3列並び */
-.activity-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-
-/* カード本体：鮮やかな緑の枠線 */
-.activity-card {
-  background-color: rgba(10, 15, 12, 0.9) !important;
-  border: 1.5px solid var(--green, #00ff00) !important;
+  background-color: #0d1a14 !important;
+  border: 1.5px solid var(--green) !important;
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -383,7 +245,7 @@ footer {
 
 .activity-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+  box-shadow: 0 0 25px rgba(0, 255, 102, 0.35);
 }
 
 .activity-card-link {
@@ -401,7 +263,7 @@ footer {
   height: 140px !important;
   overflow: hidden;
   background-color: #000;
-  border-bottom: 1px solid var(--green, #00ff00);
+  border-bottom: 1.5px solid var(--green);
 }
 
 .activity-img img {
@@ -420,43 +282,47 @@ footer {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: var(--green, #00ff00);
+  background: var(--green);
   color: #000;
+  font-family: var(--font-en);
   font-weight: 900;
   font-size: 0.75rem;
   padding: 3px 8px;
   border-radius: 3px;
+  letter-spacing: 1px;
 }
 
 /* テキスト部分 */
 .activity-content {
-  padding: 16px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .activity-date {
+  font-family: var(--font-en);
   font-size: 0.8rem;
-  color: #888;
+  color: #a0a0a0;
 }
 
 .activity-title {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin: 6px 0 8px 0;
+  line-height: 1.4;
 }
 
 .activity-card:hover .activity-title {
-  color: var(--green, #00ff00);
+  color: var(--green);
 }
 
 .activity-desc {
   font-size: 0.85rem;
-  color: #ccc;
-  line-height: 1.5;
-  margin-bottom: 12px;
+  color: #d0d0d0;
+  line-height: 1.6;
+  margin-bottom: 16px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -464,18 +330,20 @@ footer {
 }
 
 .activity-more {
-  font-size: 0.8rem;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
   font-weight: 900;
-  color: var(--green, #00ff00);
+  color: var(--green);
+  margin-top: auto;
 }
 
 /* SNSボタンデザイン */
 .sns-btn {
   display: inline-block;
-  padding: 8px 18px;
-  border: 1px solid var(--green, #00ff00);
+  padding: 8px 20px;
+  border: 1.5px solid var(--green);
   border-radius: 20px;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: bold;
@@ -483,14 +351,14 @@ footer {
 }
 
 .sns-btn:hover {
-  background-color: var(--green, #00ff00);
-  color: #000;
+  background-color: var(--green);
+  color: #000000;
 }
 
-/* → 矢印リンクボタン */
+/* Inline Link Button */
 .inline-link-btn {
   display: inline-block;
-  color: var(--green, #00ff00);
+  color: var(--green);
   font-weight: 900;
   font-size: 1rem;
   text-decoration: none;
