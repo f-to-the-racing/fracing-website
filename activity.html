@@ -30,3 +30,118 @@
   <footer>...</footer>
 </body>
 </html>
+/* ===================================
+   ACTIVITY 一覧ページ用スタイル
+   =================================== */
+.page-header {
+  background-color: #f4f4f4;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.activity-archive-section {
+  padding: 60px 0;
+}
+
+.activity-archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.activity-archive-item {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 30px;
+}
+
+.activity-archive-img {
+  width: 30%;
+  flex-shrink: 0;
+}
+
+.activity-archive-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.activity-archive-body {
+  width: 70%;
+}
+
+.activity-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.activity-tag {
+  background-color: #111;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.activity-archive-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.activity-archive-title a {
+  color: #333;
+  text-decoration: none;
+}
+
+.activity-archive-title a:hover {
+  text-decoration: underline;
+}
+
+.activity-archive-desc {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.back-to-home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid #111;
+  color: #111;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .activity-archive-item {
+    flex-direction: column;
+  }
+  .activity-archive-img,
+  .activity-archive-body {
+    width: 100%;
+  }
+}
