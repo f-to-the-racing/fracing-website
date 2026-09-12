@@ -50,7 +50,7 @@ header {
   z-index: 1000;
 }
 
-.logo-img { height: 36px; width: auto; display: block; }
+.logo-img { height: 54px; width: auto; display: block; }
 .nav-container { display: flex; align-items: center; gap: 24px; }
 .nav-links { display: flex; align-items: center; gap: 8px; }
 
