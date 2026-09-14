@@ -384,6 +384,11 @@ footer {
 
 @media (max-width: 768px) {
   header {
-    position: relative; /* 固定を解除して通常配置にする */
+    position: relative;
+  }
+
+  /* 本文の上の空き（余白）を小さく調整 */
+  main {
+    padding-top: 20px; /* ここ（20px）の数字を大きくしたり小さくしたりして調整してください */
   }
 }
