@@ -381,3 +381,9 @@ footer {
 .inline-link-btn:hover {
   transform: translateX(6px);
 }
+
+@media (max-width: 768px) {
+  header {
+    position: relative; /* 固定を解除して通常配置にする */
+  }
+}
