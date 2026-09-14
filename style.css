@@ -387,8 +387,14 @@ footer {
     position: relative;
   }
 
-  /* 本文の上の空き（余白）を小さく調整 */
+  /* スマホ表示時の上部余白をセットでリセット */
   main {
-    padding-top: 0px; /* ここ（20px）の数字を大きくしたり小さくしたりして調整してください */
+    margin-top: 0 !important;   /* 110pxの不要なマージンを解除 */
+    padding-top: 0 !important;
+  }
+
+  /* 最初のセクションの上余白を詰める（20px程度に調整） */
+  main > section:first-child {
+    padding-top: 20px !important; 
   }
 }
